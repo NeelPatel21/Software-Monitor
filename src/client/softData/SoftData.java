@@ -13,14 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package softwareMonitor;
+package client.softData;
+
+import java.util.Arrays;
 
 /**
  *
  * @author Neel Patel
  */
-public class SoftwareMonitor {
-    public static void main(String... arg){
+public class SoftData {
+    private static final String DEF_KEYS[]={
+        "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+        "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
+    };
+    
+    private final String ar[];
+    private ProcessBuilder pb;
+    public SoftData(){
+        ar=DEF_KEYS;
+    }
+    
+    public SoftData(String... reg){
+        this.ar=Arrays.copyOf(reg, reg.length);
+    }
+    
+    private void run(){
         
     }
 }
