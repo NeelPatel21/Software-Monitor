@@ -15,10 +15,15 @@
  */
 package client.softData;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.nio.file.Path;
 
 /**
- *
+ * this class provide a facility to get all software details.
  * @author Neel Patel
  */
 public class SoftData {
@@ -28,16 +33,58 @@ public class SoftData {
     };
     
     private final String ar[];
-    private ProcessBuilder pb;
+    private List<String> out=new ArrayList<>();
+    private boolean isExecuted=false;
+    //private Thread t=null;
+    
+    /**
+     * this is default constructor.
+     * this constructor use default keys to read the software details.
+     */
     public SoftData(){
         ar=DEF_KEYS;
     }
     
+    /**
+     * @param reg registry keys, which will used to get the software details.
+     */
     public SoftData(String... reg){
         this.ar=Arrays.copyOf(reg, reg.length);
     }
     
+    /**
+     * this method loops on all the keys to get the Software details.
+     * this method will append the output of key to the List {@code out}.
+     * this method uses the temporary folder to get the details.
+     */
     private void run(){
-        
+        isExecuted=true;
+        for(String s:ar){
+            try {
+                Path p=Paths.get(System.getenv("temp")).resolve("info");
+                Files.deleteIfExists(p);
+                String cmd="reg.exe "+"EXPORT "+s+" "+
+                          p.toString();
+                ProgramExecuter pe=new ProgramExecuter(new ArrayList<>(),cmd);
+                pe.execute(5000);
+                List<String> o= Files.readAllLines(p);
+                out.addAll(o);
+                Files.deleteIfExists(p);
+            } catch(Exception ex) {
+            }
+        }
+    }
+
+    /**
+     * this method start the process of getting software details.
+     * if this method already executed then old result will be returned.
+     * this method return output unmodifiable List of String.
+     * @return output as List of String 
+     */
+    public synchronized List<String> start(){
+        if(isExecuted)
+            return null;
+        run();
+        return out;
     }
 }
