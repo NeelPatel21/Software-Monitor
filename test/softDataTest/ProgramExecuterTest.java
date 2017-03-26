@@ -19,14 +19,13 @@ import client.softData.ProgramExecuter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import static javafx.scene.input.KeyCode.Y;
 
 /**
  *
  * @author Rushabh Modi
  */
 public class ProgramExecuterTest {
-    public static void main() throws IOException{
+    public static void main(String arg[]) throws IOException{
         List<String> y = new ArrayList<>();
         y.add("5");
         y.add("4635");
