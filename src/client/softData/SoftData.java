@@ -33,8 +33,8 @@ public class SoftData {
     };
     
     private final String ar[];
-    private List<String> out=new ArrayList<>();
-    private boolean isExecuted=false;
+    private List<String> out=new ArrayList<>();//list of outputs of all programs.
+    private boolean isExecuted=false;//false if not executed yet,true if already executed.
     //private Thread t=null;
     
     /**
