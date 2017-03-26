@@ -22,7 +22,7 @@ import java.nio.file.Paths;
 import java.time.LocalTime;
 
 /**
- * this class provide a facility to get all software details.
+ * This class will help in scheduling the software as per requirement
  * @author Parth Doshi
  */
 
@@ -33,7 +33,7 @@ public class Scheduler{
             Path fullpath = Paths.get(path);
             Files.createDirectories(fullpath);
         }
-        catch(Exception e){
+        catch(IOException e){
             System.out.println(e);
         }
     }
