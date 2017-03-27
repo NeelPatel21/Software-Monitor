@@ -87,6 +87,7 @@ public class ProgramExecuter {
         try{
             b=pr.waitFor(time, TimeUnit.MILLISECONDS); //wait for subprocess to terminate in time
         }catch(Exception ex){
+            ex.printStackTrace();
             return null;
         }
         if(!b){ //if the process is not terminated in specified time
@@ -99,8 +100,10 @@ public class ProgramExecuter {
             tout.join();
             tin.join();
         } catch(Exception ex) {
+            ex.printStackTrace();
             return null;
         }
+        //System.out.println("Program Executer comp");
         return output;
     }
 

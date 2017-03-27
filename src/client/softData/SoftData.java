@@ -15,6 +15,7 @@
  */
 package client.softData;
 
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -59,18 +60,26 @@ public class SoftData {
      */
     private void run(){
         isExecuted=true;
+        //System.out.println("run start");
         for(String s:ar){
             try {
-                Path p=Paths.get(System.getenv("temp")).resolve("info");
+                //System.out.println("run :- in loop");
+                Path p=Paths.get(System.getenv("temp"));
+                Files.createDirectories(p);
+                p=p.resolve("Software_Det.txt");
                 Files.deleteIfExists(p);
                 String cmd="reg.exe "+"EXPORT "+s+" "+
-                          p.toString();
+                          p.toString()+" /y";
                 ProgramExecuter pe=new ProgramExecuter(new ArrayList<>(),cmd);
-                pe.execute(5000);
-                List<String> o= Files.readAllLines(p);
+                //System.out.println("check 1");
+                pe.execute(5000);//.forEach(System.out::println);
+                Thread.sleep(1000);
+                List<String> o= Files.readAllLines(p,Charset.forName("UTF-16"));
                 out.addAll(o);
                 Files.deleteIfExists(p);
             } catch(Exception ex) {
+                System.out.println("error :- "+ex);
+                ex.printStackTrace();
             }
         }
     }
