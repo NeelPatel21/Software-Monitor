@@ -13,20 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.net.remSer;
-
-import com.dataBean.IntDataBean;
-import java.rmi.Remote;
-import java.rmi.RemoteException;
+package client.flow;
 
 /**
  *
  * @author Neel Patel
  */
-public interface IntMainSer extends Remote{
-    //boolean aya()throws RemoteException;
-    //String tokan()throws RemoteException;
-    String getKey(String pcName)throws RemoteException;
-    boolean log(IntDataBean db)throws RemoteException;
-    //boolean errLog(IntLogBean)throws RemoteException;
+public class ClientFlow {
+    
 }
