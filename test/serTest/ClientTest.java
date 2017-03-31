@@ -13,18 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package softDataTest;
+package serTest;
 
-import client.filter.Filter;
-import client.softData.SoftData;
+import client.flow.ClientFlow;
+import com.net.remSer.IntMainSer;
+import java.util.Scanner;
 
 /**
  *
  * @author Neel Patel
  */
-public class SoftDataTest {
-    public static void main(String... arg){
-        SoftData sd=new SoftData();
-        new Filter(sd.start()).filterdata().forEach(System.out::println);
+public class ClientTest {
+    static Scanner sc=new Scanner(System.in);
+    public static void main(String arg[]){
+        System.out.println("enter url :- ");
+        String s="";
+        for(s=sc.nextLine();s.trim().isEmpty();s=sc.nextLine());
+        ClientFlow cf=new ClientFlow(s.trim());
+        cf.start();
     }
 }

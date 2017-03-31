@@ -29,24 +29,27 @@ public class MainSerHandle {
     
     public synchronized String getKey(String uName){
         try{
+            System.out.println("get key check");
             return keysp.get();
         }catch(Exception ex){
+            System.out.println("get key exception");
             return "";
         }
     }
     
-    public synchronized boolean setLoger(Function flog){
+    public synchronized boolean setLoger(Function<IntDataBean,Boolean> flog){
         this.flog=flog;
         return true;
     }
     
-    public synchronized boolean serKeysp(Supplier<String> sp){
+    public synchronized boolean setKeysp(Supplier<String> sp){
         keysp=sp;
         return true;
     }
     
     public synchronized boolean log(IntDataBean db){
         try{
+            System.out.println("log check");
             return flog.apply(db);
         }catch(Exception ex){
             return false;

@@ -17,14 +17,16 @@ package com.net.remSer;
 
 import com.dataBean.IntDataBean;
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
 /**
  *
  * @author Neel Patel
  */
-public class MainSer implements IntMainSer{
+public class MainSer extends UnicastRemoteObject implements IntMainSer{
     private final MainSerHandle mh;
-    MainSer(MainSerHandle mh)throws RemoteException{
+    
+    public MainSer(MainSerHandle mh)throws RemoteException{
         this.mh=mh;
     }
 

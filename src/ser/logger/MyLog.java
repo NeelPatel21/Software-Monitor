@@ -15,12 +15,54 @@
  */
 package ser.logger;
 
+import com.dataBean.IntDataBean;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+import java.nio.file.Path;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import static ser.config.Configuration.getDefaultLogDir;
+
 /**
  *
  * @author Neel Patel
  */
 public class MyLog {
-    MyLog(){
-        
+    private Path p;
+    private static final String dtf="yyMMdd";
+    
+    public MyLog(){
+        p=getDefaultLogDir();
     }
+    
+    public MyLog(Path dir){
+        p=dir;
+    }
+    
+    public synchronized boolean log(IntDataBean db){
+        try{
+            LocalDate date=db.getTime().toLocalDate();
+            Path pf=p.resolve(date
+                      .format(DateTimeFormatter.ofPattern(dtf))+".txt");
+            try(FileOutputStream out=new FileOutputStream(pf.toFile(),true);
+                      PrintStream ps=new PrintStream(out)){
+                if(ps==null)
+                    return false;
+                db.getSoftDetail().forEach(i->{
+                    ps.println("Date = "+date.toString()+" ; "
+                              +"user = "+db.getName()+" ; "
+                              +"Software = "+i);
+                    ps.flush();
+                });
+            }
+            System.out.println("log :-"+db.getName()+" count :-"
+                      +db.getSoftDetail().size());
+            System.out.println("log return");
+            return true;
+        }catch(Exception ex){
+            System.err.println("logging fail");
+            return false;
+        }
+    }
+    
 }

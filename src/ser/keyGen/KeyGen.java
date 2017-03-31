@@ -26,12 +26,12 @@ public class KeyGen {
     private KeyGen(){}
     private static long last=0;
      
-    public static synchronized long getKey(){
+    public static synchronized String getKey(){
         LocalDateTime dt=LocalDateTime.now();
         long pid=Long.parseLong(dt.format(DateTimeFormatter.ofPattern("yyMMddhhmmss")));
         if(pid!=last){
             last=pid;
-            return pid;
+            return pid+"";
         }else{
             try{
                 Thread.sleep(1000);

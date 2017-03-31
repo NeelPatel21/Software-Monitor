@@ -15,6 +15,7 @@
  */
 package client.flow;
 
+import client.filter.Filter;
 import client.softData.SoftData;
 import com.dataBean.DataBeans;
 import com.dataBean.IntDataBean;
@@ -41,6 +42,7 @@ public class ClientFlow {
         try{
             List<String> sd=new SoftData().start();
             //filter the data
+            sd=new ArrayList(new Filter(sd).filterdata());
             db=DataBeans.getDataBean(sd,System.getenv("username"));
             
         }catch(Exception ex){
@@ -49,9 +51,10 @@ public class ClientFlow {
         }
         
         String key=readKey();//read key
-        
+        System.out.println("key read :- "+key);
         if(key.trim().isEmpty()){//key is not available
             key=getKey();//get new key from server
+            System.out.println("getting key :- "+key);
             if(key.trim().isEmpty())//check if the key is empty
                 return;
             if(!writeKey(key))//write key to the hd.
@@ -77,7 +80,9 @@ public class ClientFlow {
         try {
             List<String> li=new ArrayList();
             li.add(key);
-            Path p=Paths.get(System.getenv("appdata"),"Software Monitor","key.txt");
+            Path p=Paths.get(System.getenv("appdata"),"Software Monitor");
+            Files.createDirectories(p);
+            p=p.resolve("key.txt");
             Files.write(p,li);
             return true;
         } catch(Exception ex) {
@@ -92,6 +97,7 @@ public class ClientFlow {
             if(!s.trim().isEmpty())
                 return s;
         } catch(Exception ex) {
+            System.out.println("error in getKey");
         }
         return "";
     }
