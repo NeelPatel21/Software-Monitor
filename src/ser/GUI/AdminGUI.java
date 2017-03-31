@@ -16,7 +16,24 @@
 
 package ser.GUI;
 
+//import 
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+
 /**
  *
  * @author Parth Doshi
  */
+
+public class AdminGUI extends JFrame implements ActionListener{
+    public AdminGUI(){
+        
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+}

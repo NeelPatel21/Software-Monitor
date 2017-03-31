@@ -15,11 +15,13 @@
  */
 package client.scheduler;
 
+import client.softData.ProgramExecuter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * This class will help in scheduling the software as per requirement
@@ -28,13 +30,13 @@ import java.time.LocalTime;
 
 public class Scheduler{
     void schedule(LocalTime lt) {
-        try{
-            String path=System.getenv("appdata");
-            Path fullpath = Paths.get(path);
-            Files.createDirectories(fullpath);
-        }
-        catch(IOException e){
-            System.out.println(e);
+        List<String> y = new ArrayList<>();
+        String cmd="";
+        ProgramExecuter pe=new ProgramExecuter(y,cmd);
+        try {
+            pe.execute(5000);//.forEach(System.out::println);
+        } catch (IOException ex) {
+            Logger.getLogger(Scheduler.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
