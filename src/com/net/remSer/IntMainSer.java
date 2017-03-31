@@ -27,6 +27,6 @@ public interface IntMainSer extends Remote{
     //boolean aya()throws RemoteException;
     //String tokan()throws RemoteException;
     String getKey(String pcName)throws RemoteException;
-    boolean log(IntDataBean db)throws RemoteException;
+    boolean log(IntDataBean db,String key)throws RemoteException;
     //boolean errLog(IntLogBean)throws RemoteException;
 }

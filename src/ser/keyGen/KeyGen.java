@@ -13,29 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.net.remSer;
+package ser.keyGen;
 
-import com.dataBean.IntDataBean;
-import java.rmi.RemoteException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
  * @author Neel Patel
  */
-public class MainSer implements IntMainSer{
-    private final MainSerHandle mh;
-    MainSer(MainSerHandle mh)throws RemoteException{
-        this.mh=mh;
+public class KeyGen {
+    private KeyGen(){}
+    private static long last=0;
+     
+    public static synchronized long getKey(){
+        LocalDateTime dt=LocalDateTime.now();
+        long pid=Long.parseLong(dt.format(DateTimeFormatter.ofPattern("yyMMddhhmmss")));
+        if(pid!=last){
+            last=pid;
+            return pid;
+        }else{
+            try{
+                Thread.sleep(1000);
+            }catch(InterruptedException e){}
+            return getKey();
+        }   
     }
-
-    @Override
-    public String getKey(String pcName) throws RemoteException {
-        return mh.getKey(pcName);
-    }
-
-    @Override
-    public boolean log(IntDataBean db,String key) throws RemoteException {
-        return mh.log(db);
-    }
-    
 }

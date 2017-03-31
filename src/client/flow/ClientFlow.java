@@ -15,10 +15,93 @@
  */
 package client.flow;
 
+import client.softData.SoftData;
+import com.dataBean.DataBeans;
+import com.dataBean.IntDataBean;
+import com.net.remSer.IntMainSer;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.rmi.Naming;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Neel Patel
  */
 public class ClientFlow {
+    private String url;
+    public ClientFlow(String url){
+        this.url=url;
+    }
     
+    public void start(){
+        IntDataBean db;
+        try{
+            List<String> sd=new SoftData().start();
+            //filter the data
+            db=DataBeans.getDataBean(sd,System.getenv("username"));
+            
+        }catch(Exception ex){
+            System.err.println("error in getting software details");
+            return;
+        }
+        
+        String key=readKey();//read key
+        
+        if(key.trim().isEmpty()){//key is not available
+            key=getKey();//get new key from server
+            if(key.trim().isEmpty())//check if the key is empty
+                return;
+            if(!writeKey(key))//write key to the hd.
+                return;
+        }
+        
+        if(log(db,url))
+            return;
+        
+    }
+    
+    String readKey(){
+        try {
+            Path p=Paths.get(System.getenv("appdata"),"Software Monitor","key.txt");
+            return Files.readAllLines(p).stream()
+                      .filter(i->!i.trim().isEmpty()).findFirst().orElse("");
+        } catch(Exception ex) {
+            return "";
+        }
+    }
+    
+    boolean writeKey(String key){
+        try {
+            List<String> li=new ArrayList();
+            li.add(key);
+            Path p=Paths.get(System.getenv("appdata"),"Software Monitor","key.txt");
+            Files.write(p,li);
+            return true;
+        } catch(Exception ex) {
+            return false;
+        }
+    }
+    
+    String getKey(){
+        try {
+            IntMainSer obj=(IntMainSer)Naming.lookup(url);
+            String s=obj.getKey(System.getProperty("username"));
+            if(!s.trim().isEmpty())
+                return s;
+        } catch(Exception ex) {
+        }
+        return "";
+    }
+    
+    boolean log(IntDataBean db,String key){
+        try{
+            IntMainSer obj=(IntMainSer)Naming.lookup(url);
+            return obj.log(db, key);
+        }catch(Exception ex){
+            return false;
+        }
+    }
 }

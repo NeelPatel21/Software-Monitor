@@ -13,29 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.net.remSer;
-
-import com.dataBean.IntDataBean;
-import java.rmi.RemoteException;
+package ser.logger;
 
 /**
  *
  * @author Neel Patel
  */
-public class MainSer implements IntMainSer{
-    private final MainSerHandle mh;
-    MainSer(MainSerHandle mh)throws RemoteException{
-        this.mh=mh;
+public class MyLog {
+    MyLog(){
+        
     }
-
-    @Override
-    public String getKey(String pcName) throws RemoteException {
-        return mh.getKey(pcName);
-    }
-
-    @Override
-    public boolean log(IntDataBean db,String key) throws RemoteException {
-        return mh.log(db);
-    }
-    
 }

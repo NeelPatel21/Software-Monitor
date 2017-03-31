@@ -16,18 +16,40 @@
 package com.net.remSer;
 
 import com.dataBean.IntDataBean;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 /**
  *
  * @author Neel Patel
  */
 public class MainSerHandle {
+    private Supplier<String> keysp=()->"";
+    private Function<IntDataBean,Boolean> flog=x->false;
     
-    public String getKey(String uName){
-        return null;
+    public synchronized String getKey(String uName){
+        try{
+            return keysp.get();
+        }catch(Exception ex){
+            return "";
+        }
     }
     
-    public boolean log(IntDataBean db){
-        return false;
+    public synchronized boolean setLoger(Function flog){
+        this.flog=flog;
+        return true;
+    }
+    
+    public synchronized boolean serKeysp(Supplier<String> sp){
+        keysp=sp;
+        return true;
+    }
+    
+    public synchronized boolean log(IntDataBean db){
+        try{
+            return flog.apply(db);
+        }catch(Exception ex){
+            return false;
+        }
     }
 }
