@@ -16,8 +16,11 @@
 package com.net.remSer;
 
 import com.dataBean.IntDataBean;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import ser.logger.IntLogger;
 
 /**
  *
@@ -25,7 +28,7 @@ import java.util.function.Supplier;
  */
 public class MainSerHandle {
     private Supplier<String> keysp=()->"";
-    private Function<IntDataBean,Boolean> flog=x->false;
+    private List<IntLogger> flog=new ArrayList<>();
     
     public synchronized String getKey(String uName){
         try{
@@ -37,8 +40,8 @@ public class MainSerHandle {
         }
     }
     
-    public synchronized boolean setLoger(Function<IntDataBean,Boolean> flog){
-        this.flog=flog;
+    public synchronized boolean setLoger(IntLogger flog){
+        this.flog.add(flog);
         return true;
     }
     
@@ -50,7 +53,7 @@ public class MainSerHandle {
     public synchronized boolean log(IntDataBean db){
         try{
             System.out.println("log check");
-            return flog.apply(db);
+            return flog.parallelStream().map(i->i.log(db)).allMatch(i->i==true);
         }catch(Exception ex){
             return false;
         }

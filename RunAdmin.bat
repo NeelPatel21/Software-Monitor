@@ -1,0 +1,1 @@
+java -jar Software_Monitor_AdminLogCli.jar

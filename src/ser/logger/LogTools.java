@@ -48,8 +48,8 @@ public class LogTools {
                          return a[1];
                }
           }catch(Exception e){
-               return null;
+               return "";
           }
-          return null;
+          return "";
      }
 }

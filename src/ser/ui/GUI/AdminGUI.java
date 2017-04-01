@@ -39,7 +39,7 @@ import javafx.scene.control.DatePicker;
  * @author Parth Doshi
  */
 
-public class AdminGUI extends JFrame implements IntUI,ActionListener{
+public class AdminGUI extends JFrame implements ActionListener{
     //JFrame f1;
     JButton[] jb1=new JButton[6];
     JButton[] jb2;
@@ -144,19 +144,19 @@ public class AdminGUI extends JFrame implements IntUI,ActionListener{
 	
     }
     
-    @Override
+   // @Override
     public void dbStart() {
         jb1[3].setEnabled(true);
         jb1[4].setEnabled(true);
     }
 
-    @Override
+   // @Override
     public void dbStop() {
         jb1[3].setEnabled(false);
         jb1[4].setEnabled(false);
     }
 
-    @Override
+   // @Override
     public void showMessage(String msg) {
         /**
          * This method opens a dialog box showing a message
@@ -164,7 +164,7 @@ public class AdminGUI extends JFrame implements IntUI,ActionListener{
         JOptionPane.showMessageDialog(null, msg, "Message Box", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    @Override
+   // @Override
     public String showPrompt(String msg) {
         /**
          * This method is called when a user input is required
@@ -173,7 +173,7 @@ public class AdminGUI extends JFrame implements IntUI,ActionListener{
         return mes;
     }
 
-    @Override
+   // @Override
     public void start() {
         setVisible(true);
     }
@@ -183,12 +183,12 @@ public class AdminGUI extends JFrame implements IntUI,ActionListener{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    @Override
+   // @Override
     public void close() throws IOException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public static void main(String[] args) {
-        AdminGUI ag=new AdminGUI();
+   //     AdminGUI ag=new AdminGUI();
     }
 }

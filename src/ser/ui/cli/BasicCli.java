@@ -100,7 +100,7 @@ public class BasicCli implements IntUI{
             LocalDate d=LocalDate.parse(s.trim(),DateTimeFormatter.ISO_LOCAL_DATE);
             ia.getAllUname(d).forEach(System.out::println);
         }catch(Exception ex){
-            System.out.println("error :- "+ex);
+            System.out.println("error4 :- "+ex);
         }
     }
     
@@ -113,8 +113,10 @@ public class BasicCli implements IntUI{
         for(date=sc.nextLine();date.trim().isEmpty();date=sc.nextLine());
         try{
             LocalDate d=LocalDate.parse(date.trim(),DateTimeFormatter.ISO_LOCAL_DATE);
-            System.out.println("Date\t\tinstall\t\tversion\tSoftware");
             ia.getUserDetail(name, d).forEach(i->{
+                System.out.println("ip :- "+i.getIP());
+                System.out.println("mac :- "+i.getMac());
+                System.out.println("Date\t\tinstall\t\tversion\tSoftware");
                 i.getSoftDetail().forEach(x->{
                     System.out.println(i.getTime().toLocalDate()+"\t"
                             +(x.getDate()==null?"not available":x.getDate())+"\t"
@@ -123,7 +125,7 @@ public class BasicCli implements IntUI{
                 });
             });
         }catch(Exception ex){
-            System.out.println("error :- "+ex);
+            System.out.println("error3 :- "+ex);
         }
     }
 

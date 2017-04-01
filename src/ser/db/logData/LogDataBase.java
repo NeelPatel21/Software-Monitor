@@ -17,10 +17,13 @@ package ser.db.logData;
 
 import com.dataBean.DataBeans;
 import com.dataBean.IntDataBean;
+import com.dataBean.IntDataTuple;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -95,7 +98,7 @@ public class LogDataBase implements IntDataBase{
         List<IntDataBean> ldb=new ArrayList<>();
         try{
             for(LocalDate d=sd;d.isBefore(ed);d=d.plusDays(1)){
-                System.out.println("check 1");
+                //System.out.println("check 1");
                 ldb.addAll(getUserDetail(user,d));
             }
             return Collections.unmodifiableList(ldb);
@@ -177,26 +180,34 @@ public class LogDataBase implements IntDataBase{
         try{
             List<IntDataBean> ldb=new ArrayList<>();
             List<String> l=readLog(ld);
-            Map<String,List<String>> m=new HashMap<>();
-            l.stream().filter(x->{
+            Map<String,List<IntDataTuple>> m=new HashMap<>();
+            String ip,mac;
+            String lo=l.stream().filter(x->{
                     try{
                         return LogTools.getLogProperty(x,"user").equalsIgnoreCase(user);
                     }catch(Exception ex){
                         return false;
                     }
-                    
                 })
                 //.peek(x->System.out.println("check 2:-"+x))
-                .forEach(x->{
+                .peek(x->{
                     try{
                         String n=LogTools.getLogProperty(x,"user");
                         String s=LogTools.getLogProperty(x,"Software");
+                        String v=LogTools.getLogProperty(x,"Version");
+                        LocalDate d=null;
+                        try{
+                            d=LocalDate.parse(LogTools.getLogProperty(x,"InstallDate"));
+                        }catch(Exception ex){}
                         m.putIfAbsent(n,new ArrayList<>());
-                        m.get(n).add(s);
+                        m.get(n).add(DataBeans.getDataTuple(s,v,d));
                     }catch(Exception ex){}
-                });
-            m.forEach((String x, List<String> y) -> {
-                ldb.add(DataBeans.getDataBean(y, x, ld));
+                }).reduce((i,j)->i).orElse("");
+            ip=LogTools.getLogProperty(lo, "ip");
+            mac=LogTools.getLogProperty(lo, "mac");
+            m.forEach((String x, List<IntDataTuple> y) -> {
+                ldb.add(DataBeans.getAddDataBean(y,x
+                          ,LocalDateTime.of(ld, LocalTime.now()),ip, mac));
             });
             return ldb;
         }catch(Exception ex){
@@ -219,7 +230,7 @@ public class LogDataBase implements IntDataBase{
                 }).forEach(x->{
                     try{
                         String n=LogTools.getLogProperty(x,"user");
-                        String s=LogTools.getLogProperty(n,"Software");
+                        String s=LogTools.getLogProperty(x,"Software");
                         m.putIfAbsent(n,new ArrayList<>());
                         m.get(n).add(s);
                     }catch(Exception ex){}

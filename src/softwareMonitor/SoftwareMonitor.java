@@ -15,12 +15,46 @@
  */
 package softwareMonitor;
 
+import client.flow.ClientFlow;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import ser.admin.Admin;
+import ser.admin.IntAdmin;
+import ser.db.IntDataBase;
+import ser.db.logData.LogDataBase;
+import ser.ui.IntUI;
+import ser.ui.cli.BasicCli;
+
 /**
  *
  * @author Neel Patel
  */
 public class SoftwareMonitor {
     public static void main(String... arg){
-        
+        //AdminLogCli();
+        Client();
+    }
+    
+    public static void AdminLogCli(){
+        IntDataBase db=new LogDataBase(Paths.get("temp","log").toAbsolutePath());
+        IntAdmin ia=new Admin(db);
+        IntUI cli=new BasicCli(ia);
+        cli.start();
+    }
+    
+    public static void Client(){
+        try {
+            Path p=Paths.get(System.getenv("appdata"),"Software Monitor","url.txt");
+            String s=Files.readAllLines(p).stream()
+                      .filter(i->!i.trim().isEmpty())
+                      .findFirst().orElse("");
+            ClientFlow cf=new ClientFlow(s.trim());
+            cf.start();
+        } catch(Exception ex) {
+        }
     }
 }
