@@ -18,14 +18,18 @@ package ser.admin;
 import com.dataBean.IntDataBean;
 import java.time.LocalDate;
 import java.util.List;
+import ser.ui.IntUI;
 
 /**
  *
  * @author Neel Patel
  */
 public interface IntAdmin {
+    boolean registerUI(IntUI ui);
     void startSer();
     void stopSer();
+    void condb();
+    void remdb();
     List<String> getAllUname(LocalDate dt);
     List<IntDataBean> getUserDetail(String uName,LocalDate dt);
 }

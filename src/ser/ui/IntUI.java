@@ -20,6 +20,7 @@ package ser.ui;
  * @author Neel Patel
  */
 public interface IntUI {    //gui implement
+    void start();
     void dbStop();
     void dbStart();
     void showMessage(String msg);

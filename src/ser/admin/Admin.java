@@ -18,7 +18,9 @@ package ser.admin;
 import com.dataBean.IntDataBean;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 import ser.db.IntDataBase;
+import ser.ui.IntUI;
 
 /**
  *
@@ -26,6 +28,8 @@ import ser.db.IntDataBase;
  */
 public class Admin implements IntAdmin{
     private final IntDataBase db;
+    private IntUI ui;
+    private Thread t=null;
     
     public Admin(IntDataBase db){
         this.db=db;
@@ -43,11 +47,29 @@ public class Admin implements IntAdmin{
 
     @Override
     public List<String> getAllUname(LocalDate dt) {
-        db.getAllUserDetail(LocalDate)
+        return db.getAllUserDetail(dt).stream()
+                  .map(i->i.getName()).distinct()
+                  .sorted().collect(Collectors.toList());
     }
 
     @Override
     public List<IntDataBean> getUserDetail(String uName, LocalDate dt) {
+        return db.getUserDetail(uName, dt, dt.plusDays(1));
+    }
+
+    @Override
+    public boolean registerUI(IntUI ui) {
+        this.ui=ui;
+        return true;
+    }
+
+    @Override
+    public void condb() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void remdb() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
