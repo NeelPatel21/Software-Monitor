@@ -21,71 +21,125 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.*;
-import javax.swing.table.DefaultTableModel;
+import java.time.LocalDate;
+import ser.admin.IntAdmin;
+import ser.ui.IntUI;
 
 /**
  *
  * @author Parth Doshi
  */
 
-public class AdminGUI extends JFrame implements ActionListener{
-    JFrame f1,f2;
-    JButton jb;
-    JLabel jl;
-    JPanel panel;
-    JTextField textbox;
-    static JTable table;
-    JButton b1;
-    String[] columnNames = {"",""};
-
-    public AdminGUI(){
-        f1 = new JFrame("Swing and JavaFX");
-        f1.setLayout(new GridLayout(3, 3));
-	jb=new JButton();
-        jl=new JLabel();
-        b1 = new JButton("Search");
-	b1.setBounds(120,130,150,20);
-	
-        b1.addActionListener(this);
+public class AdminGUI extends JFrame implements IntUI,ActionListener{
+    JFrame f1;
+    JButton[] jb1=new JButton[6];
+    JButton[] jb2;
+    JLabel[] jl;
+    final IntAdmin ia;
+    public AdminGUI(IntAdmin ia){
+        this.ia=ia;
+        //List<String> abc = ia.getAllUname(LocalDate.MIN);
+        JPanel p1=new JPanel(new FlowLayout());
+        jb1[1]=new JButton("A");
+        jb1[1].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //refresh page
+            }
+        });
+        jb1[2]=new JButton("Connect database");
+        jb1[2].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ia.condb();
+            }
+        });
+        jb1[3]=new JButton("Close Database Connection");
+        jb1[3].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ia.remdb();
+            }
+        });
+        jb1[4]=new JButton("Open");
+        jb1[4].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+            }
+        });
+        jb1[5]=new JButton("Start Server");
+        jb1[5].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ia.startSer();
+            }
+        });
+        jb1[6]=new JButton("Stop Server");
+        jb1[6].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ia.stopSer();
+            }
+        });
+        f1 = new JFrame("Software-Monitor");
+        f1.setLayout(new GridLayout(3, 2));
+	p1.add(jb1[1]);
+        p1.add(jb1[5]);
+        p1.add(jb1[6]);
+        p1.add(jb1[2]);
+        p1.add(jb1[3]);
+        p1.add(jb1[4]);
         
-        f1.add(textbox);
-	f1.add(jl);
-	f1.add(b1);
+        jb1[2].setEnabled(true);
+        jb1[3].setEnabled(false);
+        jb1[4].setEnabled(false);
+
+        JPanel p2=new JPanel(new GridLayout(300, 2));        
         f1.setVisible(true);
 	f1.setSize(500, 400);
         f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
     }
+    
+    @Override
+    public void dbStart() {
+        jb1[3].setEnabled(true);
+        jb1[4].setEnabled(true);
+    }
 
     @Override
-    public void actionPerformed(ActionEvent ae) {
-        b1 = (JButton)ae.getSource();
-        System.out.println("Showing Table Data.......");
-	//showTableData();			
+    public void dbStop() {
+        jb1[3].setEnabled(false);
+        jb1[4].setEnabled(false);
     }
-    public void showTableData()
-	{
-	    f2 = new JFrame("Database Search Result");
-            f2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            f2.setLayout(new BorderLayout());		
-            //TableModel tm = new TableModel();
-            DefaultTableModel model = new DefaultTableModel();
-            model.setColumnIdentifiers(columnNames);
-            //DefaultTableModel model = new DefaultTableModel(tm.getData1(), tm.getColumnNames());		
-            //table = new JTable(model);
-            table = new JTable();
-            table.setModel(model);		
-            table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
-            table.setFillsViewportHeight(true);
-            JScrollPane scroll = new JScrollPane(table);
-            scroll.setHorizontalScrollBarPolicy(
-                    JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-            scroll.setVerticalScrollBarPolicy(
-                    JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);		
-            String textvalue = textbox.getText();
-            f2.add(scroll);
-            f2.setVisible(true);
-            f2.setSize(400,300);
-        
-        }
+
+    @Override
+    public void showMessage(String msg) {
+        /**
+         * This method opens a dialog box showing a message
+         */
+        JOptionPane.showMessageDialog(null, msg, "Message Box", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    @Override
+    public String showPrompt(String msg) {
+        /**
+         * This method is called when a user input is required
+         */
+        //System.out.println("ABCD");
+        String mes =(JOptionPane.showInputDialog(msg));
+        return mes;
+    }
+
+    @Override
+    public void start() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }
