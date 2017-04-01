@@ -89,8 +89,7 @@ public class DataBeans {
             NetworkInterface network = NetworkInterface.getByInetAddress(ip);
             byte[] mac = network.getHardwareAddress();
             String s="";
-            for(byte b:mac){
-                int i=b;
+            for(byte i:mac){
                 if(i<=9)
                     s+=i;
                 else if(i==10)

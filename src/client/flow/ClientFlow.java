@@ -48,7 +48,8 @@ public class ClientFlow {
             List<IntDataTuple> dt=new ArrayList(new Filter(sd).filterdata());
             db=DataBeans.getAddDataBean(dt,System.getenv("username"));
         }catch(Exception ex){
-            System.err.println("error in getting software details");
+            System.err.println("error in getting software details :- "+ex);
+            ex.printStackTrace();
             return;
         }
         
