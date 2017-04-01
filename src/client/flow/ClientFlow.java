@@ -20,6 +20,7 @@ import client.softData.SoftData;
 import com.dataBean.DataBeans;
 import com.dataBean.IntDataBean;
 import com.net.remSer.IntMainSer;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -85,7 +86,7 @@ public class ClientFlow {
             p=p.resolve("key.txt");
             Files.write(p,li);
             return true;
-        } catch(Exception ex) {
+        } catch(IOException ex) {
             return false;
         }
     }

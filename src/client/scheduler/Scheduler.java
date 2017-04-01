@@ -17,7 +17,10 @@ package client.scheduler;
 
 import client.softData.ProgramExecuter;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -29,9 +32,11 @@ import java.util.logging.Logger;
  */
 
 public class Scheduler{
-    void schedule(LocalTime lt) {
-        List<String> y = new ArrayList<>();
-        String cmd="";
+        private static final String dtf="HH:mm";
+    public void schedule(LocalTime lt) {
+        List<String> y = new ArrayList<>();   //C:\Users\Parth Doshi\AppData\Roaming
+        Path p=Paths.get(System.getenv("appdata"),"Software Monitor","pro.exe");
+        String cmd="SchTasks /Create /SC DAILY /TN “Software-Monitor” /TR "+p+" /ST "+lt.format(DateTimeFormatter.ofPattern(dtf));
         ProgramExecuter pe=new ProgramExecuter(y,cmd);
         try {
             pe.execute(5000);//.forEach(System.out::println);
@@ -39,4 +44,5 @@ public class Scheduler{
             Logger.getLogger(Scheduler.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
 }
