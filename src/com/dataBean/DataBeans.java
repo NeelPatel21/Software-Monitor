@@ -90,7 +90,8 @@ public class DataBeans {
             byte[] mac = network.getHardwareAddress();
             String s="";
             for(byte i:mac){
-                if(i<=9)
+                s+=Byte.toString(i);
+                /*if(i<=9)
                     s+=i;
                 else if(i==10)
                     s+='A';
@@ -103,7 +104,7 @@ public class DataBeans {
                 else if(i==14)
                     s+='E';
                 else if(i==15)
-                    s+='F';
+                    s+='F';*/
             }
             return new DataBean(sd,name,LocalDateTime.now(),ip.getHostAddress(),s);
         } catch(Exception ex) {
