@@ -82,30 +82,50 @@ public class Filter {
             if((s.trim().contains("\"DisplayName\"=")))
             {
                 //System.out.println(s);
-                String[] g = s.trim().split("\"DisplayName\"=");
+                String[] g = null;
+                try {
+                    g = s.trim().split("\"DisplayName\"=");
+                    name = (g[1].substring(1, g[1].length()-1).trim());
+                }catch(Exception e)
+                {
+                    name = "";
+                }
                 //System.out.println(g[1].substring(1, g[1].length()-1));
-                name = (g[1].substring(1, g[1].length()-1).trim());
+                
             } else {
             }
             
             if((s.trim().contains("\"DisplayVersion\"=")))
             {
                 //System.out.println(s);
-                String[] g = s.trim().split("\"DisplayVersion\"=");
+                
+                String[] g = null;
+                try{
+                g = s.trim().split("\"DisplayVersion\"=");
                 //System.out.println(g[1].substring(1, g[1].length()-1));
                 ver = (g[1].substring(1, g[1].length()-1).trim());
+                }catch(Exception e)
+                {
+                    ver = "";
+                }
             } else {
             }
             
             if((s.trim().contains("\"InstallDate\"=")))
             {
                 //System.out.println(s);
-                String[] g = s.trim().split("\"InstallDate\"=");
+                String[] g = null;
+                try{
+                g = s.trim().split("\"InstallDate\"=");
                 String tr = "";//System.out.println(g[1].substring(1, g[1].length()-1));
                 
                  tr = (g[1].substring(1, g[1].length()-1).trim());
                  
                 date = LocalDate.of(new Integer(tr.substring(0, 4)).intValue(), new Integer(tr.substring(4, 6)).intValue(), new Integer(tr.substring(6)).intValue());
+                }catch(Exception e)
+                {
+                    date = null;
+                }
             } else {
             }
         }
