@@ -88,25 +88,11 @@ public class DataBeans {
             System.out.println("Current IP address : " + ip.getHostAddress());
             NetworkInterface network = NetworkInterface.getByInetAddress(ip);
             byte[] mac = network.getHardwareAddress();
-            String s="";
-            for(byte i:mac){
-                s+=Byte.toString(i);
-                /*if(i<=9)
-                    s+=i;
-                else if(i==10)
-                    s+='A';
-                else if(i==11)
-                    s+='B';
-                else if(i==12)
-                    s+='C';
-                else if(i==13)
-                    s+='D';
-                else if(i==14)
-                    s+='E';
-                else if(i==15)
-                    s+='F';*/
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < mac.length; i++) {
+                sb.append(String.format("%02X%s", mac[i], (i < mac.length - 1) ? "-" : ""));
             }
-            return new DataBean(sd,name,LocalDateTime.now(),ip.getHostAddress(),s);
+            return new DataBean(sd,name,LocalDateTime.now(),ip.getHostAddress(),sb.toString());
         } catch(Exception ex) {
             return null;
         }

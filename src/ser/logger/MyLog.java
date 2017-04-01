@@ -27,7 +27,7 @@ import static ser.config.Configuration.getDefaultLogDir;
  *
  * @author Neel Patel
  */
-public class MyLog {
+public class MyLog implements IntLogger{
     private Path p;
     private static final String dtf="yyMMdd";
     
@@ -39,6 +39,7 @@ public class MyLog {
         p=dir;
     }
     
+    @Override
     public synchronized boolean log(IntDataBean db){
         try{
             LocalDate date=db.getTime().toLocalDate();
