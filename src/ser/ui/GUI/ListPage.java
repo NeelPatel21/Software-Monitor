@@ -30,6 +30,7 @@ import ser.admin.IntAdmin;
  *
  * @author Parth Doshi
  */
+
 class ListPage extends JFrame implements ActionListener{
     final IntAdmin ia;
     JLabel[] jl;
