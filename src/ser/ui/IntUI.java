@@ -15,11 +15,13 @@
  */
 package ser.ui;
 
+import java.io.Closeable;
+
 /**
  *
  * @author Neel Patel
  */
-public interface IntUI {    //gui implement
+public interface IntUI extends Closeable{    //gui implement
     void start();
     void dbStop();
     void dbStart();

@@ -15,6 +15,9 @@
  */
 package com.dataBean;
 
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.UnknownHostException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,26 +28,29 @@ import java.util.List;
  * @author Neel Patel
  */
 class DataBean implements IntDataBean{
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
     private LocalDateTime dt;
     private List<IntDataTuple> sd;
-    private String name;
+    private String name="",ip="",mac="";
     static long getVersion(){
         return serialVersionUID;
     }
     
     DataBean(List<IntDataTuple> softDat,String name){
-        dt=LocalDateTime.now();
-        sd=new ArrayList<>();
-        sd.addAll(softDat);
-        this.name=name;
+        this(softDat,name,LocalDateTime.now());
     }
     
     DataBean(List<IntDataTuple> softDat,String name,LocalDateTime dt){
+        this(softDat,name,dt,"","");
+    }
+    
+    DataBean(List<IntDataTuple> softDat,String name,LocalDateTime dt,String ip,String mac){
         this.dt=dt;
         sd=new ArrayList<>();
         sd.addAll(softDat);
         this.name=name;
+        this.ip=ip;
+        this.mac=mac;
     }
     
     @Override
@@ -60,6 +66,16 @@ class DataBean implements IntDataBean{
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String getIP() {
+        return ip;
+    }
+
+    @Override
+    public String getMac() {
+        return mac;
     }
     
 }

@@ -16,10 +16,24 @@
 package ser.admin;
 
 import com.dataBean.IntDataBean;
+import com.net.remSer.IntMainSer;
+import com.net.remSer.MainSer;
+import com.net.remSer.MainSerHandle;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Scanner;
+import ser.UrlTools;
+import static ser.UrlTools.registerObj;
+import static ser.config.Configuration.setDefaultLogDir;
 import ser.db.IntDataBase;
+import ser.keyGen.KeyGen;
+import ser.logger.MyLog;
 import ser.ui.IntUI;
 
 /**
@@ -27,9 +41,10 @@ import ser.ui.IntUI;
  * @author Neel Patel
  */
 public class Admin implements IntAdmin{
+    private Scanner sc=new Scanner(System.in);
     private final IntDataBase db;
     private IntUI ui;
-    private Thread t=null;
+    private String u="";
     
     public Admin(IntDataBase db){
         this.db=db;
@@ -37,19 +52,46 @@ public class Admin implements IntAdmin{
     
     @Override
     public void startSer() {
-        //coming soon
+        try{
+            Path pt=Paths.get("temp","log").toAbsolutePath();
+            Files.createDirectories(pt);
+            setDefaultLogDir(pt);
+            //System.out.println("path - "+pt);
+            //MyLog.SetDir(pt);
+            MyLog mg=new MyLog();
+            MainSerHandle mh=new MainSerHandle();
+            mh.setKeysp(KeyGen::getKey);
+            mh.setLoger(mg::log);
+            IntMainSer ms=new MainSer(mh);
+            try{
+                Registry r=LocateRegistry.createRegistry(8686);
+            }catch(Exception e){
+                System.err.println("registry fail");
+            }
+            String uri=registerObj(ms,8686,"main");
+            ui.showMessage("uri :- "+uri);
+            u=uri;
+        }catch(Exception ex){
+            System.err.println("error :- "+ex);
+        }
     }
 
     @Override
     public void stopSer() {
-        //coming soon
+        try{
+            UrlTools.unregister(u);
+            u="";
+            System.gc();
+            ui.showMessage("server stoped.");
+            System.out.println("list :- "+Thread.getAllStackTraces());
+        }catch(Exception ex){
+            System.err.println("error :- "+ex);
+        }
     }
 
     @Override
     public List<String> getAllUname(LocalDate dt) {
-        return db.getAllUserDetail(dt).stream()
-                  .map(i->i.getName()).distinct()
-                  .sorted().collect(Collectors.toList());
+        return db.getAllUserName(dt);
     }
 
     @Override
@@ -73,4 +115,8 @@ public class Admin implements IntAdmin{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    @Override
+    public void close()throws IOException{
+        System.exit(0);
+    }
 }

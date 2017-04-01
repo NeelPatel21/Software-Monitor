@@ -13,24 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ser.admin;
+package cliTest;
 
-import com.dataBean.IntDataBean;
-import java.io.Closeable;
-import java.time.LocalDate;
-import java.util.List;
+import java.nio.file.Paths;
+import ser.admin.Admin;
+import ser.admin.IntAdmin;
+import ser.db.IntDataBase;
+import ser.db.logData.LogDataBase;
 import ser.ui.IntUI;
+import ser.ui.cli.BasicCli;
 
 /**
  *
  * @author Neel Patel
  */
-public interface IntAdmin extends Closeable{
-    boolean registerUI(IntUI ui);
-    void startSer();
-    void stopSer();
-    void condb();
-    void remdb();
-    List<String> getAllUname(LocalDate dt);
-    List<IntDataBean> getUserDetail(String uName,LocalDate dt);
+public class BasicCliTest {
+    //private BasicCliTest(IntAdmin ia){}
+    public static void main(String arg[]){
+        IntDataBase db=new LogDataBase(Paths.get("temp","log").toAbsolutePath());
+        IntAdmin ia=new Admin(db);
+        IntUI cli=new BasicCli(ia);
+        cli.start();
+    }
 }

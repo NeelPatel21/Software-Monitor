@@ -27,9 +27,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.BiConsumer;
+import java.util.stream.Collectors;
 import ser.db.IntDataBase;
 import ser.logger.LogTools;
+import static ser.logger.LogTools.getLogProperty;
 
 /**
  *
@@ -43,6 +44,16 @@ public class LogDataBase implements IntDataBase{
         dir=d;
     }
 
+    @Override
+    public List<String> getAllUserName(LocalDate date) {
+        List<String> uName=readLog(date).stream()
+                  .map(i->getLogProperty(i,"user"))
+                  .filter(i->i!=null)
+                  .distinct()
+                  .collect(Collectors.toList());
+        return uName;
+    }
+    
     @Override
     public List<IntDataBean> getAllUserDetail(LocalDate date) {
         try{
@@ -84,6 +95,7 @@ public class LogDataBase implements IntDataBase{
         List<IntDataBean> ldb=new ArrayList<>();
         try{
             for(LocalDate d=sd;d.isBefore(ed);d=d.plusDays(1)){
+                System.out.println("check 1");
                 ldb.addAll(getUserDetail(user,d));
             }
             return Collections.unmodifiableList(ldb);
@@ -172,10 +184,13 @@ public class LogDataBase implements IntDataBase{
                     }catch(Exception ex){
                         return false;
                     }
-                }).forEach(x->{
+                    
+                })
+                //.peek(x->System.out.println("check 2:-"+x))
+                .forEach(x->{
                     try{
                         String n=LogTools.getLogProperty(x,"user");
-                        String s=LogTools.getLogProperty(n,"Software");
+                        String s=LogTools.getLogProperty(x,"Software");
                         m.putIfAbsent(n,new ArrayList<>());
                         m.get(n).add(s);
                     }catch(Exception ex){}
@@ -218,8 +233,4 @@ public class LogDataBase implements IntDataBase{
         }
     }
 
-    @Override
-    public List<String> getAllUserName(LocalDate date) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

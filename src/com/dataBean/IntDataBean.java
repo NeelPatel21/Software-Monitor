@@ -27,4 +27,6 @@ public interface IntDataBean extends Serializable{
     LocalDateTime getTime();
     List<IntDataTuple> getSoftDetail();
     String getName();
+    String getIP();
+    String getMac();
 }

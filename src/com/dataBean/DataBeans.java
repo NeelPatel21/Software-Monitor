@@ -15,10 +15,16 @@
  */
 package com.dataBean;
 
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.UnknownHostException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
@@ -66,6 +72,49 @@ public class DataBeans {
      */
     public static IntDataBean getNewDataBean(List<IntDataTuple> sd,String name){
         return new DataBean(sd,name);
+    }
+    
+    /**
+     * returns immutable object of type IntDataBean.
+     * getTime method of the Object returned by this method will return
+       Object of LocalDateTime which shows the information of 
+     * @param sd
+     * @param name
+     * @return 
+     */
+    public static IntDataBean getAddDataBean(List<IntDataTuple> sd,String name){
+        try {
+            InetAddress ip = InetAddress.getLocalHost();
+            System.out.println("Current IP address : " + ip.getHostAddress());
+            NetworkInterface network = NetworkInterface.getByInetAddress(ip);
+            byte[] mac = network.getHardwareAddress();
+            String s="";
+            for(byte b:mac){
+                int i=b;
+                if(i<=9)
+                    s+=i;
+                else if(i==10)
+                    s+='A';
+                else if(i==11)
+                    s+='B';
+                else if(i==12)
+                    s+='C';
+                else if(i==13)
+                    s+='D';
+                else if(i==14)
+                    s+='E';
+                else if(i==15)
+                    s+='F';
+            }
+            return new DataBean(sd,name,LocalDateTime.now(),ip.getHostAddress(),s);
+        } catch(Exception ex) {
+            return null;
+        }
+    }
+    
+    public static IntDataBean getAddDataBean(List<IntDataTuple> sd,String name,
+              LocalDateTime dt,String ip,String mac){
+        return new DataBean(sd,name,dt,ip,mac);
     }
     
     /**

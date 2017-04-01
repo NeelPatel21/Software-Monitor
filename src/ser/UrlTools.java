@@ -17,11 +17,9 @@
 package ser;
 
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.rmi.Naming;
 import java.rmi.Remote;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.rmi.server.UnicastRemoteObject;
 
 /**
  *
@@ -96,7 +94,7 @@ public class UrlTools {
                          System.out.println("Register Thread Exception.."+ex);
                          ex.printStackTrace();
                     }
-               }).start();
+               },uri).start();
                Thread.sleep(1000);
                System.out.println("bind suc :- "+obj);
                Remote r=Naming.lookup(uri);
@@ -110,4 +108,22 @@ public class UrlTools {
                return false;
           }
      }
+     
+     public static boolean unregister(String url){
+         try{
+            Remote remote = Naming.lookup(url);
+            Naming.unbind(url);
+            if (remote instanceof UnicastRemoteObject) {
+                UnicastRemoteObject.unexportObject(remote, true);
+            }
+            return true;
+         }catch(Exception ex){
+             return false;
+         }
+    }
+    public static void unregisterAll() throws Exception {
+        for (String label : Naming.list("rmi://"+InetAddress.getLocalHost().getHostAddress()+":8686")) {
+            unregister(label);
+        }
+    }
 }
