@@ -132,7 +132,7 @@ public class Filter {
         //return se;
          return dt;
     }
-    /*public static void main(String args[]) throws IOException
+    public static void main(String args[]) throws IOException
     {
         Path p;
         p = Paths.get("C:","Users","Sony","Desktop","out1.txt");
@@ -149,7 +149,7 @@ public class Filter {
           //  System.out.println(s);
         
                 
-    }*/
+    }
     
 }
 
