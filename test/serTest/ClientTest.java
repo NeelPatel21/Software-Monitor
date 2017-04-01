@@ -16,7 +16,6 @@
 package serTest;
 
 import client.flow.ClientFlow;
-import com.net.remSer.IntMainSer;
 import java.util.Scanner;
 
 /**

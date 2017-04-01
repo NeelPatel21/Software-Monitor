@@ -1,0 +1,114 @@
+Date = 2017-04-01 ; user = Neel Patel ; Software = 7-Zip 9.20
+Date = 2017-04-01 ; user = Neel Patel ; Software = Adobe Flash Player 10 ActiveX
+Date = 2017-04-01 ; user = Neel Patel ; Software = Adobe Reader X (10.1.1)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Broadcom 802.11 Network Adapter
+Date = 2017-04-01 ; user = Neel Patel ; Software = Cisco EAP-FAST Module
+Date = 2017-04-01 ; user = Neel Patel ; Software = Cisco LEAP Module
+Date = 2017-04-01 ; user = Neel Patel ; Software = Cisco PEAP Module
+Date = 2017-04-01 ; user = Neel Patel ; Software = CorporateClientSetup
+Date = 2017-04-01 ; user = Neel Patel ; Software = D3DX10
+Date = 2017-04-01 ; user = Neel Patel ; Software = Dev-C++
+Date = 2017-04-01 ; user = Neel Patel ; Software = Dolby Home Theater v4
+Date = 2017-04-01 ; user = Neel Patel ; Software = Energy Management
+Date = 2017-04-01 ; user = Neel Patel ; Software = Git version 2.5.3
+Date = 2017-04-01 ; user = Neel Patel ; Software = Google Chrome
+Date = 2017-04-01 ; user = Neel Patel ; Software = Google Update Helper
+Date = 2017-04-01 ; user = Neel Patel ; Software = Intel(R) Management Engine Components
+Date = 2017-04-01 ; user = Neel Patel ; Software = Intel(R) OpenCL CPU Runtime
+Date = 2017-04-01 ; user = Neel Patel ; Software = Intel(R) Processor Graphics
+Date = 2017-04-01 ; user = Neel Patel ; Software = Intel(R) Rapid Storage Technology
+Date = 2017-04-01 ; user = Neel Patel ; Software = Intel(R) USB 3.0 eXtensible Host Controller Driver
+Date = 2017-04-01 ; user = Neel Patel ; Software = Intelligent Touchpad
+Date = 2017-04-01 ; user = Neel Patel ; Software = Intel® Trusted Connect Service Client
+Date = 2017-04-01 ; user = Neel Patel ; Software = Java 8 Update 102 (64-bit)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Java Auto Updater
+Date = 2017-04-01 ; user = Neel Patel ; Software = Java SE Development Kit 8 Update 102 (64-bit)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Junk Mail filter update
+Date = 2017-04-01 ; user = Neel Patel ; Software = Lenovo Bluetooth with Enhanced Data Rate Software
+Date = 2017-04-01 ; user = Neel Patel ; Software = Lenovo CAPOSD
+Date = 2017-04-01 ; user = Neel Patel ; Software = Lenovo EE Boot Optimizer
+Date = 2017-04-01 ; user = Neel Patel ; Software = Lenovo EasyCamera
+Date = 2017-04-01 ; user = Neel Patel ; Software = Lenovo MuteSync
+Date = 2017-04-01 ; user = Neel Patel ; Software = Lenovo OneKey Recovery
+Date = 2017-04-01 ; user = Neel Patel ; Software = Lenovo YouCam
+Date = 2017-04-01 ; user = Neel Patel ; Software = MSVCRT
+Date = 2017-04-01 ; user = Neel Patel ; Software = MSVCRT_amd64
+Date = 2017-04-01 ; user = Neel Patel ; Software = Malwarebytes Anti-Malware version 2.2.1.1043
+Date = 2017-04-01 ; user = Neel Patel ; Software = Mesh Runtime
+Date = 2017-04-01 ; user = Neel Patel ; Software = Microsoft .NET Framework 4.5
+Date = 2017-04-01 ; user = Neel Patel ; Software = Microsoft Application Error Reporting
+Date = 2017-04-01 ; user = Neel Patel ; Software = Microsoft SQL Server 2005 Compact Edition [ENU]
+Date = 2017-04-01 ; user = Neel Patel ; Software = Microsoft Security Client
+Date = 2017-04-01 ; user = Neel Patel ; Software = Microsoft Security Essentials
+Date = 2017-04-01 ; user = Neel Patel ; Software = Microsoft Silverlight
+Date = 2017-04-01 ; user = Neel Patel ; Software = Microsoft Visual C++ 2005 Redistributable
+Date = 2017-04-01 ; user = Neel Patel ; Software = Microsoft Visual C++ 2010  x64 Redistributable - 10.0.30319
+Date = 2017-04-01 ; user = Neel Patel ; Software = Microsoft Visual C++ 2010  x86 Redistributable - 10.0.30319
+Date = 2017-04-01 ; user = Neel Patel ; Software = NVIDIA Control Panel 295.93
+Date = 2017-04-01 ; user = Neel Patel ; Software = NVIDIA Graphics Driver 295.93
+Date = 2017-04-01 ; user = Neel Patel ; Software = NVIDIA Install Application
+Date = 2017-04-01 ; user = Neel Patel ; Software = NVIDIA Optimus 1.7.12
+Date = 2017-04-01 ; user = Neel Patel ; Software = NVIDIA PhysX
+Date = 2017-04-01 ; user = Neel Patel ; Software = NVIDIA PhysX System Software 9.11.1111
+Date = 2017-04-01 ; user = Neel Patel ; Software = NVIDIA Update 1.7.12
+Date = 2017-04-01 ; user = Neel Patel ; Software = NVIDIA Update Components
+Date = 2017-04-01 ; user = Neel Patel ; Software = NetBeans IDE 8.2
+Date = 2017-04-01 ; user = Neel Patel ; Software = Notepad++ (64-bit x64)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Nsd
+Date = 2017-04-01 ; user = Neel Patel ; Software = Onekey Theater
+Date = 2017-04-01 ; user = Neel Patel ; Software = Python 3.5.2 Add to Path (32-bit)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Python 3.5.2 Core Interpreter (32-bit)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Python 3.5.2 Development Libraries (32-bit)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Python 3.5.2 Documentation (32-bit)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Python 3.5.2 Executables (32-bit)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Python 3.5.2 Standard Library (32-bit)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Python 3.5.2 Tcl/Tk Support (32-bit)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Python 3.5.2 Test Suite (32-bit)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Python 3.5.2 Utility Scripts (32-bit)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Python 3.5.2 pip Bootstrap (32-bit)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Python Launcher
+Date = 2017-04-01 ; user = Neel Patel ; Software = Realtek Ethernet Controller All-In-One Windows Driver
+Date = 2017-04-01 ; user = Neel Patel ; Software = Realtek High Definition Audio Driver
+Date = 2017-04-01 ; user = Neel Patel ; Software = Realtek USB 2.0 Reader Driver
+Date = 2017-04-01 ; user = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB2737083)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB2742613)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB2840642v2)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB2861208)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB2894854v2)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB2898864)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB2901118)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB2972107)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB3035490)
+Date = 2017-04-01 ; user = Neel Patel ; Software = SourceTree
+Date = 2017-04-01 ; user = Neel Patel ; Software = Sublime Text Build 3114
+Date = 2017-04-01 ; user = Neel Patel ; Software = Synaptics Pointing Device Driver
+Date = 2017-04-01 ; user = Neel Patel ; Software = Update for Microsoft .NET Framework 4.5 (KB2805226)
+Date = 2017-04-01 ; user = Neel Patel ; Software = VLC media player
+Date = 2017-04-01 ; user = Neel Patel ; Software = VeriFace
+Date = 2017-04-01 ; user = Neel Patel ; Software = WinRAR 5.40 (64-bit)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Driver Package - Lenovo (ACPIVPC) System  (12/15/2011 7.1.0.1)
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Communications Platform
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Essentials
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Family Safety
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live ID Sign-in Assistant
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Installer
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Language Selector
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live MIME IFilter
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Mail
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Mesh
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Mesh ActiveX Control for Remote Connections
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Messenger
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Movie Maker
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live PIMT Platform
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Photo Common
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Photo Gallery
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Remote Client
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Remote Client Resources
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Remote Service
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Remote Service Resources
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live SOXE
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live SOXE Definitions
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live UX Platform
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live UX Platform Language Pack
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Writer
+Date = 2017-04-01 ; user = Neel Patel ; Software = Windows Live Writer Resources
