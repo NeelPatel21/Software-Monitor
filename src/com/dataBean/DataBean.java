@@ -40,6 +40,13 @@ class DataBean implements IntDataBean{
         this.name=name;
     }
     
+    DataBean(List<String> softDat,String name,LocalDateTime dt){
+        this.dt=dt;
+        sd=new ArrayList<>();
+        sd.addAll(softDat);
+        this.name=name;
+    }
+    
     @Override
     public LocalDateTime getTime() {
         return dt;

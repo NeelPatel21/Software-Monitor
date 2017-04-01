@@ -15,6 +15,9 @@
  */
 package com.dataBean;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 /**
@@ -34,5 +37,17 @@ public class DataBeans {
      */
     public static IntDataBean getDataBean(List<String> sd,String name){
         return new DataBean(sd,name);
+    }
+    
+    /**
+     * returns immutable object of type IntDataBean.
+     * getTime method of the Object returned by this method will return
+       Object of LocalDateTime which shows the information of 
+     * @param sd
+     * @param name
+     * @return 
+     */
+    public static IntDataBean getDataBean(List<String> sd,String name,LocalDate ld){
+        return new DataBean(sd,name,LocalDateTime.of(ld, LocalTime.now()));
     }
 }
