@@ -217,4 +217,9 @@ public class LogDataBase implements IntDataBase{
             return new ArrayList<>();
         }
     }
+
+    @Override
+    public List<String> getAllUserName(LocalDate date) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

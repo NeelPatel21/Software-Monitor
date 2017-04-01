@@ -37,6 +37,16 @@ public interface IntDataBase {
     
     /**
      * implementation of this method should return should return all
+       the software details on the date referred by {@code date}.
+     * this method should return list of Objects of IntDataBean. each 
+       element of the list refers to a details of particular user.
+     * @param date Object of LocalDate.
+     * @return List of userName.
+     */
+    List<String> getAllUserName(LocalDate date);
+    
+    /**
+     * implementation of this method should return should return all
        the software details of the date between {@code sd} & {@code ed}
        of all the user.
      * here the {@code ed} is exclusive. i.e. details of the date {@code ed}
