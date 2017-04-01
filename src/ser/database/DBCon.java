@@ -27,14 +27,29 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import ser.logger.IntLogger;
 /**
  *
  * @author Sony
  */
-public class DBCon implements IntDataBase {
+public class DBCon implements IntDataBase,IntLogger {
     private static final String dateformat= "yyyy-MM-dd";
     private static Connection con = null;
     private static String msg = "";
+    
+    
+    public boolean close()
+    {
+        try{
+        con.close();
+        con = null;
+        return true;
+        }catch(Exception e)
+        {
+            return false;
+        }
+    }
+    
     
     public static DBCon getDBObject(String dbname,String uname,String password) 
     {
@@ -65,7 +80,7 @@ public class DBCon implements IntDataBase {
         {
         Statement stmt=con.createStatement();
          // System.out.println("hell oworld");   
-        stmt.execute("create table logtab(logdate date, username varchar(40), ip varchar(30), displayname varchar(100), mac varchar(30), version varchar(20), insdate date)");    
+        stmt.execute("create table logtab(logdate date, username varchar(40), ip varchar(30), displayname varchar(100), mac varchar(30), version varchar(20), insdate date");    
         }
     
            }catch(Exception e)
@@ -77,7 +92,7 @@ public class DBCon implements IntDataBase {
     }
             
     
-    private DBCon(String dbname,String uname,String password) throws ClassNotFoundException, SQLException
+    public DBCon(String dbname,String uname,String password) throws ClassNotFoundException, SQLException
     {
             Class.forName("com.mysql.jdbc.Driver"); 
            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbname,uname,password);
@@ -89,11 +104,11 @@ public class DBCon implements IntDataBase {
         return msg;
     }*/
 
-    public static void main(String[] args)
+    /*public static void main(String[] args)
     {
-        System.out.println(getDBObject("temp","root","").getAllUserName(LocalDate.now()));
+        System.out.println(getDBObject("temp","root","").log(null));
      
-    }
+    }*/
     
     @Override
     public List<IntDataBean> getAllUserDetail(LocalDate date) {
@@ -206,5 +221,54 @@ public class DBCon implements IntDataBase {
         return li;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public boolean log(IntDataBean db) {
+        if(db == null)
+            return false;
+        Statement stmt = null;
+        try {
+            stmt = con.createStatement();
+        } catch (SQLException ex) {
+            Logger.getLogger(DBCon.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }catch(Exception e)
+        {
+            return false;
+        }
+        try{
+            for (IntDataTuple dt:db.getSoftDetail()){
+                String d = "";
+                String d1 = "";        
+                try{ 
+                d =  (db.getTime().format(DateTimeFormatter.ofPattern(dateformat)));
+                 d1 = (dt.getDate().format(DateTimeFormatter.ofPattern(dateformat)));
+                }catch(Exception e)
+                {
+                    return false;
+                }
+         /*         String d = "1000-01-01";
+                  String d1 = "1000-02-02";
+                  String name = "hello world";
+                  String ip = "127.0.0.1";
+                  String soft = "oracle";
+                  String mac = "10-20-30-40-50-60";
+                  String ver = "1.2.3.4.5";
+             stmt.execute("insert into logtab values('"+d+"','"+name+"','"+ip+"','"+soft+"','"+mac+"','"+ver+"','"+d1+"')");   */
+                stmt.execute("insert into logtab values('"+d+"','"+db.getName()+"','"+db.getIP()+"','"+dt.getSoftName()+"','"+db.getMac()+"','"+dt.getVersion()+"','"+d1+"')");
+            }
+            } catch (SQLException ex) {
+            Logger.getLogger(DBCon.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+            }catch(Exception e)
+            {
+                System.err.println(e);
+                return false;
+            }
+        return true;
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    /*}   catch (SQLException ex) {
+            Logger.getLogger(DBCon.class.getName()).log(Level.SEVERE, null, ex);*/
+        }
     
 }
