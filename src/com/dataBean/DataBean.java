@@ -27,20 +27,20 @@ import java.util.List;
 class DataBean implements IntDataBean{
     private static final long serialVersionUID = 1L;
     private LocalDateTime dt;
-    private List<String> sd;
+    private List<IntDataTuple> sd;
     private String name;
     static long getVersion(){
         return serialVersionUID;
     }
     
-    DataBean(List<String> softDat,String name){
+    DataBean(List<IntDataTuple> softDat,String name){
         dt=LocalDateTime.now();
         sd=new ArrayList<>();
         sd.addAll(softDat);
         this.name=name;
     }
     
-    DataBean(List<String> softDat,String name,LocalDateTime dt){
+    DataBean(List<IntDataTuple> softDat,String name,LocalDateTime dt){
         this.dt=dt;
         sd=new ArrayList<>();
         sd.addAll(softDat);
@@ -53,7 +53,7 @@ class DataBean implements IntDataBean{
     }
 
     @Override
-    public List<String> getSoftDetail() {
+    public List<IntDataTuple> getSoftDetail() {
         return Collections.unmodifiableList(sd);
     }
 

@@ -19,6 +19,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * this is factory class, provides functionality to manipulates Object of 
@@ -27,6 +28,7 @@ import java.util.List;
  */
 public class DataBeans {
     private DataBeans(){}
+    
     /**
      * returns immutable object of type IntDataBean.
      * getTime method of the Object returned by this method will return
@@ -36,7 +38,22 @@ public class DataBeans {
      * @return 
      */
     public static IntDataBean getDataBean(List<String> sd,String name){
-        return new DataBean(sd,name);
+        return new DataBean(sd.stream().map(i->getDataTuple(i))
+                  .collect(Collectors.toList()),name);
+    }
+    
+    /**
+     * returns immutable object of type IntDataBean.
+     * getTime method of the Object returned by this method will return
+       Object of LocalDateTime which shows the information of instalation date.
+     * @param sd List of Software details.
+     * @param name user name.
+     * @param ld object of type LocalDate.
+     * @return object of type IntDataBean.
+     */
+    public static IntDataBean getDataBean(List<String> sd,String name,LocalDate ld){
+        return new DataBean(sd.stream().map(i->getDataTuple(i))
+                  .collect(Collectors.toList()),name,LocalDateTime.of(ld, LocalTime.now()));
     }
     
     /**
@@ -47,7 +64,21 @@ public class DataBeans {
      * @param name
      * @return 
      */
-    public static IntDataBean getDataBean(List<String> sd,String name,LocalDate ld){
+    public static IntDataBean getNewDataBean(List<IntDataTuple> sd,String name){
+        return new DataBean(sd,name);
+    }
+    
+    /**
+     * returns immutable object of type IntDataBean.
+     * getTime method of the Object returned by this method will return
+       Object of LocalDateTime which shows the information of 
+     * @param sd
+     * @param name
+     * @param ld
+     * @return 
+     */
+    public static IntDataBean getNewDataBean(List<IntDataTuple> sd,String name
+              ,LocalDate ld){
         return new DataBean(sd,name,LocalDateTime.of(ld, LocalTime.now()));
     }
     

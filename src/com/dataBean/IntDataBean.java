@@ -25,6 +25,6 @@ import java.util.List;
  */
 public interface IntDataBean extends Serializable{
     LocalDateTime getTime();
-    List<String> getSoftDetail();
+    List<IntDataTuple> getSoftDetail();
     String getName();
 }

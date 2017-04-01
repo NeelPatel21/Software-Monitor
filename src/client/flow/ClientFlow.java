@@ -18,15 +18,17 @@ package client.flow;
 import client.filter.Filter;
 import client.softData.SoftData;
 import com.dataBean.DataBeans;
+import static com.dataBean.DataBeans.getDataTuple;
 import com.dataBean.IntDataBean;
+import com.dataBean.IntDataTuple;
 import com.net.remSer.IntMainSer;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.rmi.Naming;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -43,8 +45,10 @@ public class ClientFlow {
         try{
             List<String> sd=new SoftData().start();
             //filter the data
-            sd=new ArrayList(new Filter(sd).filterdata());
-            db=DataBeans.getDataBean(sd,System.getenv("username"));
+            sd=new ArrayList(new Filter(sd).filterdata());//change required.
+            List<IntDataTuple> dt=sd.stream().map(i->getDataTuple(i))
+                      .collect(Collectors.toList());
+            db=DataBeans.getNewDataBean(dt,System.getenv("username"));
             
         }catch(Exception ex){
             System.err.println("error in getting software details");
@@ -86,7 +90,7 @@ public class ClientFlow {
             p=p.resolve("key.txt");
             Files.write(p,li);
             return true;
-        } catch(IOException ex) {
+        } catch(Exception ex) {
             return false;
         }
     }

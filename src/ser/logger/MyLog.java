@@ -51,7 +51,9 @@ public class MyLog {
                 db.getSoftDetail().forEach(i->{
                     ps.println("Date = "+date.toString()+" ; "
                               +"user = "+db.getName()+" ; "
-                              +"Software = "+i);
+                              +"Software = "+i.getSoftName()+" ; "
+                              +"Version = "+i.getVersion()+" ; "
+                              +"InstallDate = "+i.getDate());
                     ps.flush();
                 });
             }
