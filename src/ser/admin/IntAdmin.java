@@ -26,6 +26,6 @@ import java.util.List;
 public interface IntAdmin {
     void startSer();
     void stopSer();
-    List<String> getAllUname();
+    List<String> getAllUname(LocalDate dt);
     List<IntDataBean> getUserDetail(String uName,LocalDate dt);
 }

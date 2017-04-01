@@ -15,10 +15,40 @@
  */
 package ser.admin;
 
+import com.dataBean.IntDataBean;
+import java.time.LocalDate;
+import java.util.List;
+import ser.db.IntDataBase;
+
 /**
  *
  * @author Neel Patel
  */
-public class Admin {
+public class Admin implements IntAdmin{
+    private final IntDataBase db;
+    
+    public Admin(IntDataBase db){
+        this.db=db;
+    }
+    
+    @Override
+    public void startSer() {
+        //coming soon
+    }
+
+    @Override
+    public void stopSer() {
+        //coming soon
+    }
+
+    @Override
+    public List<String> getAllUname(LocalDate dt) {
+        db.getAllUserDetail(LocalDate)
+    }
+
+    @Override
+    public List<IntDataBean> getUserDetail(String uName, LocalDate dt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
