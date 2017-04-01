@@ -16,6 +16,8 @@
 
 package client.filter;
 
+import com.dataBean.DataTuple;
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.List;
 import java.util.TreeSet;
@@ -27,10 +29,11 @@ public class Filter {
    
      List<String> ls = null;
      Set<String> se = null;
-    
+     List<DataTuple> dt = new ArrayList<DataTuple>();
    public Filter(List<String> ls)
     {
         this.ls = ls;
+        //se.addAll(ls);
     }
     
    
@@ -41,12 +44,22 @@ public class Filter {
    
     public synchronized Set<String> filterdata()
     {
+        if(ls.size() == 0)
+            return null;
+        
         se = new TreeSet<String>();
         if(ls.size() == 0)
             return null;
-    
+        DataTuple dtt = null;
         for(String s:ls)
         {
+            
+            if(s.trim().contains("[HKEY_LOCAL_MACHINE"))
+            {
+                //dtt = Data
+            }
+            
+            
             if((s.trim().contains("\"DisplayName\"=")))
             {
                 //System.out.println(s);
