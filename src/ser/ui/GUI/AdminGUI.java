@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package ser.GUI;
+package ser.ui.GUI;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;

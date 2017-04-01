@@ -13,19 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ser.admin;
-
-import com.dataBean.IntDataBean;
-import java.time.LocalDate;
-import java.util.List;
+package ser.ui;
 
 /**
  *
  * @author Neel Patel
  */
-public interface IntAdmin {
-    void startSer();
-    void stopSer();
-    List<String> getAllUname();
-    List<IntDataBean> getUserDetail(String uName,LocalDate dt);
+public interface IntUI {    //gui implement
+    void dbStop();
+    void dbStart();
+    void showMessage(String msg);
+    String showPrompt(String msg);
 }
