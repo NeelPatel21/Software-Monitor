@@ -24,6 +24,7 @@ import java.awt.*;
 import java.time.LocalDate;
 import ser.admin.IntAdmin;
 import ser.ui.IntUI;
+import java.util.List;
 
 /**
  *
@@ -35,16 +36,36 @@ public class AdminGUI extends JFrame implements IntUI,ActionListener{
     JButton[] jb1=new JButton[6];
     JButton[] jb2;
     JLabel[] jl;
+    LocalDate date;
     final IntAdmin ia;
     public AdminGUI(IntAdmin ia){
         this.ia=ia;
-        //List<String> abc = ia.getAllUname(LocalDate.MIN);
+        List<String> abc = ia.getAllUname(LocalDate.MIN);
+        jl = new JLabel[abc.size()];
+        jb2 = new JButton[abc.size()];
+        int i = 0;
         JPanel p1=new JPanel(new FlowLayout());
-        jb1[1]=new JButton("A");
+        JPanel p2=new JPanel(new GridLayout(300, 2));
+        for(String username:abc)
+        {
+            jl[i] = new JLabel(username);
+            p2.add(jl[i]);
+            jb2[i] = new JButton("Get Details");
+            p2.add(jb2[i++]);
+            jb2[i].addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    ListPage lp=new ListPage(ia,username,date);
+                }
+            });
+        }
+                
+        jb1[1]=new JButton("Update");
         jb1[1].addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //refresh page
+                p2.repaint();
+                //p2.revalidate();
             }
         });
         jb1[2]=new JButton("Connect database");
@@ -84,6 +105,8 @@ public class AdminGUI extends JFrame implements IntUI,ActionListener{
         });
         f1 = new JFrame("Software-Monitor");
         f1.setLayout(new GridLayout(3, 2));
+        f1.add(p1);
+        f1.add(p2);
 	p1.add(jb1[1]);
         p1.add(jb1[5]);
         p1.add(jb1[6]);
@@ -95,8 +118,7 @@ public class AdminGUI extends JFrame implements IntUI,ActionListener{
         jb1[3].setEnabled(false);
         jb1[4].setEnabled(false);
 
-        JPanel p2=new JPanel(new GridLayout(300, 2));        
-        f1.setVisible(true);
+        f1.setVisible(false);
 	f1.setSize(500, 400);
         f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
@@ -127,19 +149,22 @@ public class AdminGUI extends JFrame implements IntUI,ActionListener{
         /**
          * This method is called when a user input is required
          */
-        //System.out.println("ABCD");
         String mes =(JOptionPane.showInputDialog(msg));
         return mes;
     }
 
     @Override
     public void start() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        f1.setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public static void main(String[] args) {
+        AdminGUI ag=new AdminGUI(null);
     }
     
 }
