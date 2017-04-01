@@ -45,11 +45,8 @@ public class ClientFlow {
         try{
             List<String> sd=new SoftData().start();
             //filter the data
-            sd=new ArrayList(new Filter(sd).filterdata());//change required.
-            List<IntDataTuple> dt=sd.stream().map(i->getDataTuple(i))
-                      .collect(Collectors.toList());
+            List<IntDataTuple> dt=new ArrayList(new Filter(sd).filterdata());
             db=DataBeans.getAddDataBean(dt,System.getenv("username"));
-            
         }catch(Exception ex){
             System.err.println("error in getting software details");
             return;
