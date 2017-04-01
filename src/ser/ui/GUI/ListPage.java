@@ -17,6 +17,7 @@
 package ser.ui.GUI;
 
 import com.dataBean.IntDataBean;
+import com.dataBean.IntDataTuple;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -31,31 +32,49 @@ import ser.admin.IntAdmin;
  * @author Parth Doshi
  */
 
-class ListPage extends JFrame implements ActionListener{
+class ListPage extends JFrame {
     final IntAdmin ia;
     JLabel[] jl;
+    JLabel[] sname;
+    JLabel[] ver;
+    JLabel[] idate;
+    
     JPanel p1,p2;
+    
     public ListPage(IntAdmin ia,String uname,LocalDate dt){
-        p1=new JPanel(new FlowLayout());
-        List<IntDataBean> abc = ia.getUserDetail(uname, dt);
-        p2=new JPanel(new GridLayout(abc.size(), 3));
         this.ia=ia;
+        p1=new JPanel(new GridLayout(3, 2));
+        List<IntDataBean> abc = ia.getUserDetail(uname, dt);
         jl[1]=new JLabel("Username : "+uname);
-        //jl[2]=new JLabel("IP Address : "+ia.getIp);
-        //jl[3]=new JLabel("Mac Address : "+ia.getMac);
+        jl[2]=new JLabel("IP Address : "+abc.get(0).getIP());
+        jl[3]=new JLabel("Mac Address : "+abc.get(0).getMac());
         p1.add(jl[1]);
         p1.add(jl[2]);
         p1.add(jl[3]);
+        //Panel 1 ends
         jl[4]=new JLabel("Software Name");
         jl[5]=new JLabel("Version");
         jl[6]=new JLabel("Installed Date");
+        p2=new JPanel(new GridLayout(abc.size(), 3));
         p2.add(jl[4]);
         p2.add(jl[5]);
         p2.add(jl[6]);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int i = 1;
+        for(IntDataBean p:abc){
+            for(IntDataTuple idt:p.getSoftDetail()){
+                sname[i]=new JLabel(idt.getSoftName());
+                ver[i]=new JLabel(idt.getVersion());
+                idate[i]=new JLabel(idt.getDate().toString());
+                p2.add(sname[i]);
+                p2.add(ver[i]);
+                p2.add(idate[i]);
+                i++;
+            }
+        }
+        //Panel 2 ends
+        setExtendedState(JFrame.MAXIMIZED_BOTH); 
+        setUndecorated(true);
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 }

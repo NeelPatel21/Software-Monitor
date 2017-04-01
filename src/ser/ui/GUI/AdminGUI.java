@@ -20,11 +20,19 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-import java.awt.*;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
 import ser.admin.IntAdmin;
 import ser.ui.IntUI;
 import java.util.List;
+import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.scene.control.DatePicker;
 
 /**
  *
@@ -32,20 +40,32 @@ import java.util.List;
  */
 
 public class AdminGUI extends JFrame implements IntUI,ActionListener{
-    JFrame f1;
+    //JFrame f1;
     JButton[] jb1=new JButton[6];
     JButton[] jb2;
     JLabel[] jl;
+    JTextField jtf;
     LocalDate date;
     final IntAdmin ia;
     public AdminGUI(IntAdmin ia){
+        new JFrame("Software-Monitor");
+        setLayout(new GridLayout(3, 2));
         this.ia=ia;
-        List<String> abc = ia.getAllUname(LocalDate.MIN);
+        jtf=new JTextField();
+        String sdate=jtf.getText();
+        try {
+            date = LocalDate.of(new Integer(sdate.substring(0, 4)).intValue(), new Integer(sdate.substring(5, 7)).intValue(), new Integer(sdate.substring(8)).intValue());
+        } catch (Exception ex) {
+            Logger.getLogger(AdminGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        List<String> abc = ia.getAllUname(date);
         jl = new JLabel[abc.size()];
         jb2 = new JButton[abc.size()];
         int i = 0;
-        JPanel p1=new JPanel(new FlowLayout());
-        JPanel p2=new JPanel(new GridLayout(300, 2));
+        JPanel p1=new JPanel(new GridLayout(2, 4));
+        JPanel p2=new JPanel(new GridLayout(abc.size(), 2));
+        final DatePicker dp = new DatePicker();
+        
         for(String username:abc)
         {
             jl[i] = new JLabel(username);
@@ -58,6 +78,7 @@ public class AdminGUI extends JFrame implements IntUI,ActionListener{
                     ListPage lp=new ListPage(ia,username,date);
                 }
             });
+            i++;
         }
                 
         jb1[1]=new JButton("Update");
@@ -103,10 +124,8 @@ public class AdminGUI extends JFrame implements IntUI,ActionListener{
                 ia.stopSer();
             }
         });
-        f1 = new JFrame("Software-Monitor");
-        f1.setLayout(new GridLayout(3, 2));
-        f1.add(p1);
-        f1.add(p2);
+        add(p1);
+        add(p2);
 	p1.add(jb1[1]);
         p1.add(jb1[5]);
         p1.add(jb1[6]);
@@ -117,10 +136,11 @@ public class AdminGUI extends JFrame implements IntUI,ActionListener{
         jb1[2].setEnabled(true);
         jb1[3].setEnabled(false);
         jb1[4].setEnabled(false);
-
-        f1.setVisible(false);
-	f1.setSize(500, 400);
-        f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setExtendedState(JFrame.MAXIMIZED_BOTH); 
+        setUndecorated(true);
+        setVisible(false);
+	setSize(500, 400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
     }
     
@@ -155,7 +175,7 @@ public class AdminGUI extends JFrame implements IntUI,ActionListener{
 
     @Override
     public void start() {
-        f1.setVisible(true);
+        setVisible(true);
     }
 
     @Override
@@ -163,8 +183,12 @@ public class AdminGUI extends JFrame implements IntUI,ActionListener{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public static void main(String[] args) {
-        AdminGUI ag=new AdminGUI(null);
+    @Override
+    public void close() throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    public static void main(String[] args) {
+        AdminGUI ag=new AdminGUI();
+    }
 }
