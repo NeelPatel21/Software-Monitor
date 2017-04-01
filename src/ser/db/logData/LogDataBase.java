@@ -27,6 +27,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BiConsumer;
 import ser.db.IntDataBase;
 import ser.logger.LogTools;
 
@@ -83,25 +84,7 @@ public class LogDataBase implements IntDataBase{
         List<IntDataBean> ldb=new ArrayList<>();
         try{
             for(LocalDate d=sd;d.isBefore(ed);d=d.plusDays(1)){
-                List<String> l=readLog(d);
-                Map<String,List<String>> m=new HashMap<>();
-                l.stream().filter(x->{
-                        try{
-                            return LogTools.getLogProperty(x,"user").equalsIgnoreCase(user);
-                        }catch(Exception ex){
-                            return false;
-                        }
-                    }).forEach(x->{
-                        try{
-                            String n=LogTools.getLogProperty(x,"user");
-                            String s=LogTools.getLogProperty(n,"Software");
-                            m.putIfAbsent(n,new ArrayList<>());
-                            m.get(n).add(s);
-                        }catch(Exception ex){}
-                    });
-                m.forEach((x,y)->{
-                    ldb.add(DataBeans.getDataBean(y, x, d));
-                });
+                ldb.addAll(getUserDetail(user,d));
             }
             return Collections.unmodifiableList(ldb);
         }catch(Exception ex){
@@ -111,7 +94,15 @@ public class LogDataBase implements IntDataBase{
 
     @Override
     public List<IntDataBean> getSoftDetail(String soft, LocalDate sd, LocalDate ed) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<IntDataBean> ldb=new ArrayList<>();
+        try{
+            for(LocalDate d=sd;d.isBefore(ed);d=d.plusDays(1)){
+                ldb.addAll(getSoftDetail(soft,d));
+            }
+            return Collections.unmodifiableList(ldb);
+        }catch(Exception ex){
+            return Collections.unmodifiableList(new ArrayList<>());
+        }
     }
 
     @Override
@@ -126,12 +117,23 @@ public class LogDataBase implements IntDataBase{
 
     @Override
     public int removeLogs(LocalDate ld) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try{
+            Path pf=dir.resolve(ld
+                      .format(DateTimeFormatter.ofPattern(dtf))+".txt");
+            int i=Files.readAllLines(pf).size();
+            if(Files.deleteIfExists(pf))
+                return i;
+            return 0;
+        }catch(Exception ex){
+            return -1;
+        }
     }
 
     @Override
     public int removeLogsUpto(LocalDate ld) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(LocalDate d=ld;;d=d.minusDays(1)){
+            
+        }
     }
     
     private List<String> readLog(LocalDate dt){
@@ -159,4 +161,60 @@ public class LogDataBase implements IntDataBase{
         }
     }
     
+    private List<IntDataBean> getUserDetail(String user,LocalDate ld){
+        try{
+            List<IntDataBean> ldb=new ArrayList<>();
+            List<String> l=readLog(ld);
+            Map<String,List<String>> m=new HashMap<>();
+            l.stream().filter(x->{
+                    try{
+                        return LogTools.getLogProperty(x,"user").equalsIgnoreCase(user);
+                    }catch(Exception ex){
+                        return false;
+                    }
+                }).forEach(x->{
+                    try{
+                        String n=LogTools.getLogProperty(x,"user");
+                        String s=LogTools.getLogProperty(n,"Software");
+                        m.putIfAbsent(n,new ArrayList<>());
+                        m.get(n).add(s);
+                    }catch(Exception ex){}
+                });
+            m.forEach((String x, List<String> y) -> {
+                ldb.add(DataBeans.getDataBean(y, x, ld));
+            });
+            return ldb;
+        }catch(Exception ex){
+            return new ArrayList<>();
+        }
+    }
+    
+    private List<IntDataBean> getSoftDetail(String soft,LocalDate ld){
+        try{
+            List<IntDataBean> ldb=new ArrayList<>();
+            List<String> l=readLog(ld);
+            Map<String,List<String>> m=new HashMap<>();
+            l.stream().filter(x->{
+                    try{
+                        return LogTools.getLogProperty(x,"Software")
+                                  .equalsIgnoreCase(soft);
+                    }catch(Exception ex){
+                        return false;
+                    }
+                }).forEach(x->{
+                    try{
+                        String n=LogTools.getLogProperty(x,"user");
+                        String s=LogTools.getLogProperty(n,"Software");
+                        m.putIfAbsent(n,new ArrayList<>());
+                        m.get(n).add(s);
+                    }catch(Exception ex){}
+                });
+            m.forEach((String x, List<String> y) -> {
+                ldb.add(DataBeans.getDataBean(y, x, ld));
+            });
+            return ldb;
+        }catch(Exception ex){
+            return new ArrayList<>();
+        }
+    }
 }

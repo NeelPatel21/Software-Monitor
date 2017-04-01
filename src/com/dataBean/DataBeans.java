@@ -50,4 +50,12 @@ public class DataBeans {
     public static IntDataBean getDataBean(List<String> sd,String name,LocalDate ld){
         return new DataBean(sd,name,LocalDateTime.of(ld, LocalTime.now()));
     }
+    
+    public static IntDataTuple getDataTuple(String sName,String ver,LocalDate date){
+        return new DataTuple(sName,ver,date);
+    }
+    
+    public static IntDataTuple getDataTuple(String sName){
+        return new DataTuple(sName,"",null);
+    }
 }
