@@ -22,18 +22,7 @@ import java.time.LocalDate;
  * @author Neel Patel
  */
 public interface IntDataTuple {
-    /**
-     * @return software name.
-     */
     String getSoftName();
-    
-    /**
-     * @return version of the software if available, empty string otherwise.
-     */
     String getVersion();
-    
-    /**
-     * @return installation date if available, null otherwise.
-     */
     LocalDate getDate();
 }

@@ -23,8 +23,8 @@ import java.io.Closeable;
  */
 public interface IntUI extends Closeable{    //gui implement
     void start();
-    //void dbStop();
-    //void dbStart();
+    void dbStop();
+    void dbStart();
     void showMessage(String msg);
     String showPrompt(String msg);
 }

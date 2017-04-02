@@ -22,11 +22,5 @@ import com.dataBean.IntDataBean;
  * @author Neel Patel
  */
 public interface IntLogger {
-    /**
-     * implementation of this method should logged the details
-       contained by the object {@code db}.
-     * @param db Object of IntDataBean.
-     * @return true if successfully logged, false otherwise.
-     */
     boolean log(IntDataBean db);
 }

@@ -26,48 +26,11 @@ import ser.ui.IntUI;
  * @author Neel Patel
  */
 public interface IntAdmin extends Closeable{
-    /**
-     * implementation of this method should register the object
-       {@code ui}.
-     * @param ui Object of type IntUI.
-     * @return return true if successfully registered.
-     */
     boolean registerUI(IntUI ui);
-    
-    /**
-     * start the RMI server.
-     */
     void startSer();
-    
-    /**
-     * stop the RMI server.
-     */
     void stopSer();
-    
-    /**
-     * @deprecated 
-     */
     void condb();
-    
-    /**
-     * @deprecated 
-     */
     void remdb();
-    
-    /**
-     * implementation of this method should return the List of uses
-       who have logged on the specified date.
-     * @param dt
-     * @return 
-     */
     List<String> getAllUname(LocalDate dt);
-    
-    /**
-     * implementation of this method should return all the details
-       of the user on specified date. 
-     * @param uName user name
-     * @param dt object of type LocalDate.
-     * @return 
-     */
     List<IntDataBean> getUserDetail(String uName,LocalDate dt);
 }

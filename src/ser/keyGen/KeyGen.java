@@ -26,9 +26,6 @@ public class KeyGen {
     private KeyGen(){}
     private static long last=0;
      
-    /**
-     * @return the unique key generated on date and time base.
-     */
     public static synchronized String getKey(){
         LocalDateTime dt=LocalDateTime.now();
         long pid=Long.parseLong(dt.format(DateTimeFormatter.ofPattern("yyMMddhhmmss")));

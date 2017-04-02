@@ -26,25 +26,7 @@ import java.rmi.RemoteException;
 public interface IntMainSer extends Remote{
     //boolean aya()throws RemoteException;
     //String tokan()throws RemoteException;
-    
-    /**
-     * implementation of this method should return unique key.
-     * this method will be used to get key by remote client.
-     * this method must be thread safe.
-     * @param pcName user name
-     * @return key as String.
-     * @throws RemoteException 
-     */
     String getKey(String pcName)throws RemoteException;
-    
-    /**
-     * implementation of this method should log the details contained
-       in the Object {@code db}.
-     * @param db object of IntDataBean.
-     * @param key unique key assigned to the user.
-     * @return true if the logging successfully, false otherwise.
-     * @throws RemoteException 
-     */
     boolean log(IntDataBean db,String key)throws RemoteException;
     //boolean errLog(IntLogBean)throws RemoteException;
 }

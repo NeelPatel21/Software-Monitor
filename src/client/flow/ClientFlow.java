@@ -18,6 +18,7 @@ package client.flow;
 import client.filter.Filter;
 import client.softData.SoftData;
 import com.dataBean.DataBeans;
+import static com.dataBean.DataBeans.getDataTuple;
 import com.dataBean.IntDataBean;
 import com.dataBean.IntDataTuple;
 import com.net.remSer.IntMainSer;
@@ -27,28 +28,21 @@ import java.nio.file.Paths;
 import java.rmi.Naming;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  *
  * @author Neel Patel
  */
 public class ClientFlow {
-    private String url;//url of remote admin
-    
-    /**
-     * this constructor will initialized object with specified {@code url}.
-     * @param url remote server.
-     */
+    private String url;
     public ClientFlow(String url){
         this.url=url;
     }
     
-    /**
-     * call to this method will initiate the execution flow.
-     */
     public void start(){
         IntDataBean db;
-        try{//getting software details.
+        try{
             List<String> sd=new SoftData().start();
             //filter the data
             List<IntDataTuple> dt=new ArrayList(new Filter(sd).filterdata());
@@ -69,16 +63,12 @@ public class ClientFlow {
             if(!writeKey(key))//write key to the hd.
                 return;
         }
+        
         if(log(db,url))
             return;
+        
     }
     
-    /**
-     * this method will return key which is previously stored
-       in file by {@code writeKey} method.
-     * if the key is not available the this method returns empty string.
-     * @return return key if available, empty string if not available.
-     */
     String readKey(){
         try {
             Path p=Paths.get(System.getenv("appdata"),"Software Monitor","key.txt");
@@ -89,11 +79,6 @@ public class ClientFlow {
         }
     }
     
-    /**
-     * this method writes the specified key in the file.
-     * @param key 
-     * @return true if the key is successfully written, false otherwise.
-     */
     boolean writeKey(String key){
         try {
             List<String> li=new ArrayList();
@@ -108,10 +93,6 @@ public class ClientFlow {
         }
     }
     
-    /**
-     * this method query the server for the new key.
-     * @return key if successfully received, empty string otherwise.
-     */
     String getKey(){
         try {
             IntMainSer obj=(IntMainSer)Naming.lookup(url);
@@ -124,12 +105,6 @@ public class ClientFlow {
         return "";
     }
     
-    /**
-     * this method log to the server. 
-     * @param db Object of IntDataBean which will be logged to the remote server.
-     * @param key key
-     * @return true if successfully logged on remote.
-     */
     boolean log(IntDataBean db,String key){
         try{
             IntMainSer obj=(IntMainSer)Naming.lookup(url);

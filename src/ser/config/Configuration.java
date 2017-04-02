@@ -21,7 +21,7 @@ import java.nio.file.Paths;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
- * this class contain basic configuration details.
+ *
  * @author Neel Patel
  */
 public class Configuration {

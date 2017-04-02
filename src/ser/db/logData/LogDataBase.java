@@ -36,7 +36,7 @@ import ser.logger.LogTools;
 import static ser.logger.LogTools.getLogProperty;
 
 /**
- * this class provide the facility to log analysis.
+ *
  * @author Neel Patel
  */
 public class LogDataBase implements IntDataBase{
