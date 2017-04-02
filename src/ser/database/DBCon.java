@@ -160,21 +160,21 @@ public class DBCon implements IntDataBase,IntLogger {
         try {
             stmt = con.createStatement();
         } catch (SQLException ex) {
-            return new ArrayList<>();
+            return null;
         }
             ResultSet rs=null;
         try {
             String d = LocalDate.now().format(DateTimeFormatter.ofPattern(dateformat));
             rs = stmt.executeQuery("select DISTINCT displayname from logtab where logdate=CURDATE() order by displayname asc");
         } catch (SQLException ex) {
-            return new ArrayList<>();
+            return null;
         }
         List<String> dt = new ArrayList<>();
         try {    
             while(rs.next())
                 dt.add(rs.getString("displayname"));
         } catch (SQLException ex1) {
-            return new ArrayList<>();
+            return null;
         }
         return dt;
     }

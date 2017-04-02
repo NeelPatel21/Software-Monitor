@@ -26,11 +26,10 @@ import java.nio.file.Paths;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import ser.UrlTools;
 import static ser.UrlTools.registerObj;
 import static ser.config.Configuration.setDefaultLogDir;
@@ -146,15 +145,31 @@ public class Admin implements IntAdmin{
     }
 
     @Override
-    public List<String> getAuthorized() { //To change body of generated methods, choose Tools | Templates.
-        return Collections.unmodifiableList(auth);
+    public List<String> getAuthorized() {
+        if(auth!=null)
+            return Collections.unmodifiableList(auth);
+        else{
+            auth=readAuth();
+            if(auth!=null)
+                return auth;
+            else{
+                auth=getAuth();
+                if(auth!=null){
+                    writeAuth(auth);
+                    return auth;
+                }
+                else{
+                    return new ArrayList<>();
+                }
+            }
+        }
     }
     
     private List<String> readAuth(){
         try {
             Path p=Paths.get(System.getenv("appdata"),"Software Monitor","auth.txt");
             return Files.readAllLines(p);
-        } catch(IOException ex) {
+        } catch(Exception ex) {
             return null;
         }
     }
@@ -170,7 +185,7 @@ public class Admin implements IntAdmin{
             Path p=Paths.get(System.getenv("appdata"),"Software Monitor","auth.txt");
             Files.write(p, aut);
             return true;
-        } catch(IOException ex) {
+        } catch(Exception ex) {
             return false;
         }
     }
