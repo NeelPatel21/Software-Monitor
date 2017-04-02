@@ -16,12 +16,14 @@
 package ser.database;
 
 import com.dataBean.DataBeans;
+import com.dataBean.DataTuple;
 import com.dataBean.IntDataBean;
 import com.dataBean.IntDataTuple;
 import java.time.LocalDate;
 import java.util.List;
 import ser.db.IntDataBase;
 import java.sql.*;
+import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -89,31 +91,8 @@ public class DBCon implements IntDataBase,IntLogger {
            }
            return db;
     }
+            
     
-    public List<IntDataTuple> getAuth(){
-        Statement stmt = null;
-        try {
-            stmt = con.createStatement();
-        } catch (SQLException ex) {
-            return new ArrayList<>();
-        }
-            ResultSet rs=null;
-        try {
-            String d = LocalDate.now().format(DateTimeFormatter.ofPattern(dateformat));
-            rs = stmt.executeQuery("select DISTINCT diplayname, version from logtab where logdate=CURDATE() order by displayname asc");
-        } catch (SQLException ex) {
-            return new ArrayList<>();
-        }
-        List<IntDataTuple> dt = new ArrayList<IntDataTuple>();
-        try {    
-            while(rs.next())
-                dt.add(DataBeans.getDataTuple(rs.getString("displayname"),rs.getString("version"),null));
-        } catch (SQLException ex1) {
-            return new ArrayList<>();
-        }
-        return dt;
-    }
-
     public DBCon(String dbname,String uname,String password) throws ClassNotFoundException, SQLException
     {
             Class.forName("com.mysql.jdbc.Driver"); 
@@ -126,11 +105,11 @@ public class DBCon implements IntDataBase,IntLogger {
         return msg;
     }*/
 
-    /*public static void main(String[] args)
+    public static void main(String[] args)
     {
-        System.out.println(getDBObject("temp","root","").log(null));
+        System.out.println(getDBObject("temp","root","").getUserDetail("Sony", LocalDate.of(2017, 04, 02), LocalDate.MIN));
      
-    }*/
+    }
     
     @Override
     public List<IntDataBean> getAllUserDetail(LocalDate date) {
@@ -154,10 +133,10 @@ public class DBCon implements IntDataBase,IntLogger {
         }
             ResultSet rs=null;
         try {
-            String d = (sd.format(DateTimeFormatter.ofPattern(dateformat)));
+            String d = (sd.toString());
             rs = stmt.executeQuery("select * from logtab where logdate='"+d+"' and username='"+user+"'");
         } catch (SQLException ex) {
-            Logger.getLogger(DBCon.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBCon.class.getName()).log(Level.SEVERE, null, ex); }
             List<IntDataTuple> dt = new ArrayList<IntDataTuple>();
             try {    
                 while(rs.next())
@@ -166,15 +145,41 @@ public class DBCon implements IntDataBase,IntLogger {
                 }   } catch (SQLException ex1) {
                 Logger.getLogger(DBCon.class.getName()).log(Level.SEVERE, null, ex1);
             }
+        
             ldb.add(DataBeans.getNewDataBean(dt, user, sd));
             
             
             return ldb;
-        }
         
-        return null;
+        
+        
     }
 
+    public List<IntDataTuple> getAuth(){
+        Statement stmt = null;
+        try {
+            stmt = con.createStatement();
+        } catch (SQLException ex) {
+            return new ArrayList<>();
+        }
+            ResultSet rs=null;
+        try {
+            String d = LocalDate.now().format(DateTimeFormatter.ofPattern(dateformat));
+            rs = stmt.executeQuery("select DISTINCT displayname, version from logtab where logdate=CURDATE() order by displayname asc");
+        } catch (SQLException ex) {
+            return new ArrayList<>();
+        }
+        List<IntDataTuple> dt = new ArrayList<IntDataTuple>();
+        try {    
+            while(rs.next())
+                dt.add(DataBeans.getDataTuple(rs.getString("displayname"),rs.getString("version"),null));
+        } catch (SQLException ex1) {
+            return new ArrayList<>();
+        }
+        return dt;
+    }
+
+    
     @Override
     public List<IntDataBean> getSoftDetail(String soft, LocalDate sd, LocalDate ed) {
         return null;
@@ -240,17 +245,22 @@ public class DBCon implements IntDataBase,IntLogger {
             Logger.getLogger(DBCon.class.getName()).log(Level.SEVERE, null, ex);
         }
         //System.out.println(li);
+        System.out.println(li);
         return li;
+        
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public boolean log(IntDataBean db) {
-        if(db == null)
-            return false;
+        if(db == null){
+            System.out.println("false db");
+            return false; }
         Statement stmt = null;
+        System.out.println("check-1");
         try {
             stmt = con.createStatement();
+            System.out.println("check-2");
         } catch (SQLException ex) {
             Logger.getLogger(DBCon.class.getName()).log(Level.SEVERE, null, ex);
             return false;
@@ -259,14 +269,28 @@ public class DBCon implements IntDataBase,IntLogger {
             return false;
         }
         try{
+            System.out.println("check-3");
             for (IntDataTuple dt:db.getSoftDetail()){
                 String d = "";
                 String d1 = "";        
+                System.out.println("check-4");
                 try{ 
-                d =  (db.getTime().format(DateTimeFormatter.ofPattern(dateformat)));
-                 d1 = (dt.getDate().format(DateTimeFormatter.ofPattern(dateformat)));
+                 
+                    if(db.getTime() != null)
+                        d =  (db.getTime().toString());
+                    else
+                        d = "";
+                
+                //System.out.println("check-5"+dt.getDate());
+                if(dt.getDate() != null)
+                    d1 = (dt.getDate().toString());
+                else
+                    d1 = new Date(0).toString();
+                 
                 }catch(Exception e)
                 {
+                    
+                    e.printStackTrace();
                     return false;
                 }
          /*         String d = "1000-01-01";
@@ -277,7 +301,9 @@ public class DBCon implements IntDataBase,IntLogger {
                   String mac = "10-20-30-40-50-60";
                   String ver = "1.2.3.4.5";
              stmt.execute("insert into logtab values('"+d+"','"+name+"','"+ip+"','"+soft+"','"+mac+"','"+ver+"','"+d1+"')");   */
+                
                 stmt.execute("insert into logtab values('"+d+"','"+db.getName()+"','"+db.getIP()+"','"+dt.getSoftName()+"','"+db.getMac()+"','"+dt.getVersion()+"','"+d1+"')");
+               System.out.println("check-6"); 
             }
             } catch (SQLException ex) {
             Logger.getLogger(DBCon.class.getName()).log(Level.SEVERE, null, ex);
@@ -287,6 +313,7 @@ public class DBCon implements IntDataBase,IntLogger {
                 System.err.println(e);
                 return false;
             }
+        System.out.println("true");
         return true;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     /*}   catch (SQLException ex) {
