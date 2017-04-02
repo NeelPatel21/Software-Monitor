@@ -200,7 +200,9 @@ public class LogDataBase implements IntDataBase{
                             d=LocalDate.parse(LogTools.getLogProperty(x,"InstallDate"));
                         }catch(Exception ex){}
                         m.putIfAbsent(n,new ArrayList<>());
-                        m.get(n).add(DataBeans.getDataTuple(s,v,d));
+                        IntDataTuple idt=DataBeans.getDataTuple(s,v,d);
+                        if(!m.get(n).contains(idt))
+                            m.get(n).add(idt);
                     }catch(Exception ex){}
                 }).reduce((i,j)->i).orElse("");
             ip=LogTools.getLogProperty(lo, "ip");

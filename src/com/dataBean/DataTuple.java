@@ -17,6 +17,7 @@ package com.dataBean;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  *
@@ -58,4 +59,23 @@ public class DataTuple implements IntDataTuple,Serializable{
         return date;
     }
     
+    @Override
+    public boolean equals(Object o){
+        if(!(o instanceof DataTuple))
+            return false;
+        DataTuple c=(DataTuple) o;
+        if(c.getSoftName().equals(this.getSoftName())&&
+                  c.getDate().equals(this.getDate())&&
+                  c.getVersion().equals(this.getVersion()))
+                  return true;
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 59 * hash + Objects.hashCode(this.name);
+        hash = 59 * hash + Objects.hashCode(this.date);
+        return hash;
+    }
 }

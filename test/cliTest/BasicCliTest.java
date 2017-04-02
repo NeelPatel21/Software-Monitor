@@ -33,7 +33,7 @@ public class BasicCliTest {
     public static void main(String arg[]){
         IntDataBase db=new LogDataBase(Paths.get("temp","log").toAbsolutePath());
         IntAdmin ia=new Admin(db);
-        IntUI cli=new StartPage(ia);
+        IntUI cli=new BasicCli(ia);
         cli.start();
     }
 }

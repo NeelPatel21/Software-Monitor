@@ -83,7 +83,8 @@ public class Admin implements IntAdmin{
                 System.err.println("registry fail");
             }
             String uri=registerObj(ms,8686,"main");
-            ui.showMessage("uri :- "+uri);
+            if(ui!=null)
+                ui.showMessage("uri :- "+uri);
             u=uri;
         }catch(Exception ex){
             System.err.println("error1 :- "+ex);

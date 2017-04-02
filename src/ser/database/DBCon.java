@@ -16,7 +16,6 @@
 package ser.database;
 
 import com.dataBean.DataBeans;
-import com.dataBean.DataTuple;
 import com.dataBean.IntDataBean;
 import com.dataBean.IntDataTuple;
 import java.time.LocalDate;
@@ -90,8 +89,31 @@ public class DBCon implements IntDataBase,IntLogger {
            }
            return db;
     }
-            
     
+    public List<IntDataTuple> getAuth(){
+        Statement stmt = null;
+        try {
+            stmt = con.createStatement();
+        } catch (SQLException ex) {
+            return new ArrayList<>();
+        }
+            ResultSet rs=null;
+        try {
+            String d = LocalDate.now().format(DateTimeFormatter.ofPattern(dateformat));
+            rs = stmt.executeQuery("select DISTINCT diplayname, version from logtab where logdate=CURDATE() order by displayname asc");
+        } catch (SQLException ex) {
+            return new ArrayList<>();
+        }
+        List<IntDataTuple> dt = new ArrayList<IntDataTuple>();
+        try {    
+            while(rs.next())
+                dt.add(DataBeans.getDataTuple(rs.getString("displayname"),rs.getString("version"),null));
+        } catch (SQLException ex1) {
+            return new ArrayList<>();
+        }
+        return dt;
+    }
+
     public DBCon(String dbname,String uname,String password) throws ClassNotFoundException, SQLException
     {
             Class.forName("com.mysql.jdbc.Driver"); 
