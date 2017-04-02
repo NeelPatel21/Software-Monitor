@@ -11,6 +11,7 @@ Date = 2017-04-02 ; User = Neel Patel ; Software = SourceTree ; Version = 1.8.3 
 Date = 2017-04-02 ; User = Neel Patel ; Software = VeriFace ; Version = 4.0.1.1230 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 4.0.1.1230 ; InstallDate = null
 Date = 2017-04-02 ; User = Neel Patel ; Software = VLC media player ; Version = 2.2.1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 2.2.1 ; InstallDate = null
 Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Essentials ; Version = 15.4.3508.1109 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3508.1109 ; InstallDate = null
+Date = 2017-04-02 ; User = Neel Patel ; Software = XAMPP ; Version = 7.0.6-0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 7.0.6-0 ; InstallDate = null
 Date = 2017-04-02 ; User = Neel Patel ; Software = Lenovo YouCam ; Version = 3.1.3728 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.1.3728 ; InstallDate = 2012-07-13
 Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.30501 ; Version = 12.0.30501.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 12.0.30501.0 ; InstallDate = null
 Date = 2017-04-02 ; User = Neel Patel ; Software = MySQL Installer - Community ; Version = 1.4.18.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.4.18.0 ; InstallDate = 2017-04-02
@@ -44,6 +45,7 @@ Date = 2017-04-02 ; User = Neel Patel ; Software = Cisco EAP-FAST Module ; Versi
 Date = 2017-04-02 ; User = Neel Patel ; Software = Intel(R) Management Engine Components ; Version = 8.0.2.1410 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 8.0.2.1410 ; InstallDate = null
 Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live SOXE ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
 Date = 2017-04-02 ; User = Neel Patel ; Software = MySQL Notifier 1.1.7 ; Version = 1.1.7 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.1.7 ; InstallDate = 2017-04-02
+Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual C++ 2015 Redistributable (x86) - 14.0.23026 ; Version = 14.0.23026.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 14.0.23026.0 ; InstallDate = null
 Date = 2017-04-02 ; User = Neel Patel ; Software = Python 3.5.2 Add to Path (32-bit) ; Version = 3.5.2150.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.5.2150.0 ; InstallDate = 2017-03-21
 Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Messenger ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
 Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual C++ 2005 Redistributable ; Version = 8.0.59193 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 8.0.59193 ; InstallDate = 2012-07-13
@@ -67,6 +69,7 @@ Date = 2017-04-02 ; User = Neel Patel ; Software = Python 3.5.2 pip Bootstrap (3
 Date = 2017-04-02 ; User = Neel Patel ; Software = Python 3.5.2 Test Suite (32-bit) ; Version = 3.5.2150.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.5.2150.0 ; InstallDate = 2017-03-21
 Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Mail ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
 Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Mesh ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
+Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual C++ 2015 x86 Minimum Runtime - 14.0.23026 ; Version = 14.0.23026 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 14.0.23026 ; InstallDate = 2017-04-02
 Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Writer ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
 Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Photo Common ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
 Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Writer ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
@@ -74,6 +77,7 @@ Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Writer ; Version
 Date = 2017-04-02 ; User = Neel Patel ; Software = Adobe Reader X (10.1.1) ; Version = 10.1.1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 10.1.1 ; InstallDate = 2012-07-13
 Date = 2017-04-02 ; User = Neel Patel ; Software = Lenovo EasyCamera ; Version = 1.11.1214.1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.11.1214.1 ; InstallDate = 2012-07-13
 Date = 2017-04-02 ; User = Neel Patel ; Software = Dolby Home Theater v4 ; Version = 7.2.7000.7 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 7.2.7000.7 ; InstallDate = 2012-07-13
+Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual C++ 2015 x86 Additional Runtime - 14.0.23026 ; Version = 14.0.23026 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 14.0.23026 ; InstallDate = 2017-04-02
 Date = 2017-04-02 ; User = Neel Patel ; Software = Python 3.5.2 Tcl/Tk Support (32-bit) ; Version = 3.5.2150.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.5.2150.0 ; InstallDate = 2017-03-21
 Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Mail ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
 Date = 2017-04-02 ; User = Neel Patel ; Software = MySQL Connector J ; Version = 5.1.40 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 5.1.40 ; InstallDate = 2017-04-02
@@ -114,157 +118,6 @@ Date = 2017-04-02 ; User = Neel Patel ; Software = Sublime Text Build 3114 ; Ver
 Date = 2017-04-02 ; User = Neel Patel ; Software = Synaptics Pointing Device Driver ; Version = 15.3.33.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.3.33.0 ; InstallDate = null
 Date = 2017-04-02 ; User = Neel Patel ; Software = WinRAR 5.40 (64-bit) ; Version = 5.40.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 5.40.0 ; InstallDate = null
 Date = 2017-04-02 ; User = Neel Patel ; Software = IntelÂ® Trusted Connect Service Client ; Version = 1.23.605.1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.23.605.1 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual C++ 2015 x64 Minimum Runtime - 14.0.23026 ; Version = 14.0.23026 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 14.0.23026 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Family Safety ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft .NET Framework 4.5 ; Version = 4.5.50709 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 4.5.50709 ; InstallDate = 2017-03-31
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live ID Sign-in Assistant ; Version = 7.250.4225.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 7.250.4225.0 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219 ; Version = 10.0.40219 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 10.0.40219 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = Java 8 Update 102 (64-bit) ; Version = 8.0.1020.14 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 8.0.1020.14 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Security Client ; Version = 4.10.0209.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 4.10.0209.0 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Family Safety ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Lenovo OneKey Recovery ; Version = 7.0.0.3712 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 7.0.0.3712 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = MySQL Connector C++ 1.1.8 ; Version = 1.1.8 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.1.8 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = Java SE Development Kit 8 Update 102 (64-bit) ; Version = 8.0.1020.14 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 8.0.1020.14 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Remote Service Resources ; Version = 15.4.5722.2 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.5722.2 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Remote Client Resources ; Version = 15.4.5722.2 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.5722.2 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual C++ 2013 x64 Additional Runtime - 12.0.21005 ; Version = 12.0.21005 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 12.0.21005 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft .NET Framework 4.5 ; Version = 4.5.50709 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 4.5.50709 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual Studio 2010 Tools for Office Runtime (x64) ; Version = 10.0.50908 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 10.0.50908 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Application Error Reporting ; Version = 12.0.6015.5000 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 12.0.6015.5000 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Lenovo Bluetooth with Enhanced Data Rate Software ; Version = 6.5.1.2300 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 6.5.1.2300 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.21005 ; Version = 12.0.21005 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 12.0.21005 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = NVIDIA Control Panel 295.93 ; Version = 295.93 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 295.93 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = NVIDIA Graphics Driver 295.93 ; Version = 295.93 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 295.93 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = NVIDIA Optimus 1.7.12 ; Version = 1.7.12 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.7.12 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = NVIDIA PhysX System Software 9.11.1111 ; Version = 9.11.1111 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 9.11.1111 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = NVIDIA Update 1.7.12 ; Version = 1.7.12 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.7.12 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = NVIDIA Install Application ; Version = 2.1002.62.312 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 2.1002.62.312 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = NVIDIA Update Components ; Version = 1.7.12 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.7.12 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual C++ 2015 x64 Additional Runtime - 14.0.23026 ; Version = 14.0.23026 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 14.0.23026 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = MySQL Utilities ; Version = 1.6.5 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.6.5 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = MySQL Connector/C 6.1 ; Version = 6.1.9 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 6.1.9 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = MySQL Server 5.7 ; Version = 5.7.17 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 5.7.17 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Language Selector ; Version = 15.4.3508.1109 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3508.1109 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = MySQL Connector/ODBC 5.3 ; Version = 5.3.7 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 5.3.7 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live MIME IFilter ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Remote Client ; Version = 15.4.5722.2 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.5722.2 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Remote Service ; Version = 15.4.5722.2 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.5722.2 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = 7-Zip 9.20 ; Version =  ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version =  ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Dev-C++ ; Version = 5.11 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 5.11 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Google Chrome ; Version = 57.0.2987.110 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 57.0.2987.110 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Lenovo YouCam ; Version = 3.1.3728 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.1.3728 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Lenovo OneKey Recovery ; Version = 7.0.0.3712 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 7.0.0.3712 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Lenovo CAPOSD ; Version = 1.0.0.6 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.0.0.6 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Energy Management ; Version = 7.0.4.1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 7.0.4.1 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Onekey Theater ; Version = 2.0.2.9 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 2.0.2.9 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Malwarebytes Anti-Malware version 2.2.1.1043 ; Version = 2.2.1.1043 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 2.2.1.1043 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = SourceTree ; Version = 1.8.3 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.8.3 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = VeriFace ; Version = 4.0.1.1230 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 4.0.1.1230 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = VLC media player ; Version = 2.2.1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 2.2.1 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Essentials ; Version = 15.4.3508.1109 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3508.1109 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Lenovo YouCam ; Version = 3.1.3728 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.1.3728 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.30501 ; Version = 12.0.30501.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 12.0.30501.0 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = MySQL Installer - Community ; Version = 1.4.18.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.4.18.0 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = MySQL Examples and Samples 5.7 ; Version = 5.7.17 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 5.7.17 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = MySQL Documents 5.7 ; Version = 5.7.17 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 5.7.17 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Installer ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Lenovo MuteSync ; Version = 1.0.10 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.0.10 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Movie Maker ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Junk Mail filter update ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Python 3.5.2 Documentation (32-bit) ; Version = 3.5.2150.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.5.2150.0 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live SOXE Definitions ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = CorporateClientSetup ; Version =  ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version =  ; InstallDate = 2017-03-24
-Date = 2017-04-02 ; User = Neel Patel ; Software = Intel(R) USB 3.0 eXtensible Host Controller Driver ; Version = 1.0.5.235 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.0.5.235 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Mesh ActiveX Control for Remote Connections ; Version = 15.4.5722.2 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.5722.2 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Photo Gallery ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Python 3.5.2 Executables (32-bit) ; Version = 3.5.2150.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.5.2150.0 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Photo Gallery ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Intel(R) Rapid Storage Technology ; Version = 11.0.0.1032 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 11.0.0.1032 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Nsd ; Version = 1.0.1.7 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.0.1.7 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = NVIDIA PhysX ; Version = 9.11.1111 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 9.11.1111 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software =  ; Version = 7.0.0.3712 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 7.0.0.3712 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Adobe Flash Player 10 ActiveX ; Version = 10.3.181.34 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 10.3.181.34 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Lenovo CAPOSD ; Version = 1.0.0.6 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.0.0.6 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Java Auto Updater ; Version = 2.8.102.14 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 2.8.102.14 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Cisco LEAP Module ; Version = 1.0.19 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.0.19 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live UX Platform Language Pack ; Version = 15.4.3508.1109 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3508.1109 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Python 3.5.2 Development Libraries (32-bit) ; Version = 3.5.2150.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.5.2150.0 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Google Update Helper ; Version = 1.3.32.7 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.3.32.7 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Realtek USB 2.0 Reader Driver ; Version = 6.1.7601.39015 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 6.1.7601.39015 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Cisco EAP-FAST Module ; Version = 2.2.14 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 2.2.14 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Intel(R) Management Engine Components ; Version = 8.0.2.1410 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 8.0.2.1410 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live SOXE ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = MySQL Notifier 1.1.7 ; Version = 1.1.7 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.1.7 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = Python 3.5.2 Add to Path (32-bit) ; Version = 3.5.2150.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.5.2150.0 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Messenger ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual C++ 2005 Redistributable ; Version = 8.0.59193 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 8.0.59193 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live PIMT Platform ; Version = 15.4.3508.1109 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3508.1109 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Silverlight ; Version = 4.0.50401.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 4.0.50401.0 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Mesh Runtime ; Version = 15.4.5722.2 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.5722.2 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = MSVCRT ; Version = 15.4.2862.0708 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.2862.0708 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Movie Maker ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB2737083) ; Version = 1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB2742613) ; Version = 1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Update for Microsoft .NET Framework 4.5 (KB2805226) ; Version = 1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB2840642v2) ; Version = 2 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 2 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB2861208) ; Version = 1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB2894854v2) ; Version = 2 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 2 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB2898864) ; Version = 1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB2901118) ; Version = 1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB2972107) ; Version = 1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Security Update for Microsoft .NET Framework 4.5 (KB3035490) ; Version = 1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Python Launcher ; Version = 3.5.2121.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.5.2121.0 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Python 3.5.2 pip Bootstrap (32-bit) ; Version = 3.5.2150.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.5.2150.0 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Python 3.5.2 Test Suite (32-bit) ; Version = 3.5.2150.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.5.2150.0 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Mail ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Mesh ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Writer ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Photo Common ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Writer ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Writer ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Adobe Reader X (10.1.1) ; Version = 10.1.1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 10.1.1 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Lenovo EasyCamera ; Version = 1.11.1214.1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.11.1214.1 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Dolby Home Theater v4 ; Version = 7.2.7000.7 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 7.2.7000.7 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Python 3.5.2 Tcl/Tk Support (32-bit) ; Version = 3.5.2150.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.5.2150.0 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Mail ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = MySQL Connector J ; Version = 5.1.40 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 5.1.40 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live UX Platform ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Energy Management ; Version = 7.0.4.1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 7.0.4.1 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = MSVCRT_amd64 ; Version = 15.4.2862.0708 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.2862.0708 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Photo Common ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Communications Platform ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Onekey Theater ; Version = 2.0.2.9 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 2.0.2.9 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Writer Resources ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Mesh ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = D3DX10 ; Version = 15.4.2368.0902 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.2368.0902 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = MySQL Connector Net 6.9.9 ; Version = 6.9.9 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 6.9.9 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual C++ 2015 Redistributable (x64) - 14.0.23026 ; Version = 14.0.23026.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 14.0.23026.0 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Python 3.5.2 Utility Scripts (32-bit) ; Version = 3.5.2150.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.5.2150.0 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Python 3.5.2 Core Interpreter (32-bit) ; Version = 3.5.2150.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.5.2150.0 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Messenger ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Cisco PEAP Module ; Version = 1.1.6 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.1.6 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = SourceTree ; Version = 1.8.3 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.8.3 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft SQL Server 2005 Compact Edition [ENU] ; Version = 3.1.0000 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.1.0000 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219 ; Version = 10.0.40219 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 10.0.40219 ; InstallDate = 2017-04-02
-Date = 2017-04-02 ; User = Neel Patel ; Software = Intel(R) Processor Graphics ; Version = 8.15.10.2712 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 8.15.10.2712 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Realtek High Definition Audio Driver ; Version = 6.0.1.6559 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 6.0.1.6559 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Realtek Ethernet Controller All-In-One Windows Driver ; Version = 7.48.823.2011 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 7.48.823.2011 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Intel(R) OpenCL CPU Runtime ; Version =  ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version =  ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Python 3.5.2 Standard Library (32-bit) ; Version = 3.5.2150.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 3.5.2150.0 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Intelligent Touchpad ; Version = 1.00.0108 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.00.0108 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Essentials ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
-Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Driver Package - Lenovo (ACPIVPC) System  (12/15/2011 7.1.0.1) ; Version = 12/15/2011 7.1.0.1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 12/15/2011 7.1.0.1 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Broadcom 802.11 Network Adapter ; Version = 5.100.82.112 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 5.100.82.112 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Git version 2.5.3 ; Version = 2.5.3 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 2.5.3 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Lenovo EE Boot Optimizer ; Version = 0.0.1.9 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 0.0.1.9 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Security Essentials ; Version = 4.10.209.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 4.10.209.0 ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual Studio 2010 Tools for Office Runtime (x64) ; Version = 10.0.50903 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 10.0.50903 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = NetBeans IDE 8.2 ; Version = 8.2 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 8.2 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Notepad++ (64-bit x64) ; Version = 7.3.3 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 7.3.3 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Sublime Text Build 3114 ; Version =  ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version =  ; InstallDate = 2017-03-21
-Date = 2017-04-02 ; User = Neel Patel ; Software = Synaptics Pointing Device Driver ; Version = 15.3.33.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.3.33.0 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = WinRAR 5.40 (64-bit) ; Version = 5.40.0 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 5.40.0 ; InstallDate = null
-Date = 2017-04-02 ; User = Neel Patel ; Software = Intel® Trusted Connect Service Client ; Version = 1.23.605.1 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 1.23.605.1 ; InstallDate = 2012-07-13
 Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft Visual C++ 2015 x64 Minimum Runtime - 14.0.23026 ; Version = 14.0.23026 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 14.0.23026 ; InstallDate = 2017-04-02
 Date = 2017-04-02 ; User = Neel Patel ; Software = Windows Live Family Safety ; Version = 15.4.3502.0922 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 15.4.3502.0922 ; InstallDate = 2012-07-13
 Date = 2017-04-02 ; User = Neel Patel ; Software = Microsoft .NET Framework 4.5 ; Version = 4.5.50709 ; Ip = 10.21.1.125 ; Mac = 08-9E-01-04-13-87 ; Version = 4.5.50709 ; InstallDate = 2017-03-31

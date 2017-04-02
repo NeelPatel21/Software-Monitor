@@ -106,12 +106,16 @@ public class Admin implements IntAdmin{
 
     @Override
     public List<String> getAllUname(LocalDate dt) {
-        return db.getAllUserName(dt);
+        if(db!=null)
+            return db.getAllUserName(dt);
+        return ld.getAllUserName(dt);
     }
 
     @Override
     public List<IntDataBean> getUserDetail(String uName, LocalDate dt) {
-        return db.getUserDetail(uName, dt, dt.plusDays(1));
+        if(db!=null)
+            return db.getUserDetail(uName, dt, dt.plusDays(1));
+        return ld.getUserDetail(uName, dt, dt.plusDays(1));
     }
 
     @Override
