@@ -73,7 +73,8 @@ public class MainSerHandle {
     public synchronized boolean log(IntDataBean db){
         try{
             System.out.println("log check");
-            return flog.parallelStream().map(i->i.log(db)).allMatch(i->i==true);
+            return flog.parallelStream().map(i->i.log(db)).filter(i->i==true)
+                      .count()==flog.size();
         }catch(Exception ex){
             return false;
         }
