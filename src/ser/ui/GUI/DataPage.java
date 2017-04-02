@@ -42,13 +42,14 @@ class DataPage extends JFrame {
     public DataPage(IntAdmin ia, String uname, LocalDate dt) {
         js[0] = new JLabel();
         this.uname = uname;
-        setLayout(new FlowLayout());
+//        setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+      
         //setLayout(new GridLayout(11, 3));
-        //Toolkit tk = Toolkit.getDefaultToolkit();
-        //int xSize = ((int) tk.getScreenSize().getWidth());
-        //int ySize = ((int) tk.getScreenSize().getHeight());
-        //setSize(xSize, ySize);
-        setSize(600,600);
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        int xSize = ((int) tk.getScreenSize().getWidth());
+        int ySize = ((int) tk.getScreenSize().getHeight()-50);
+        setSize(xSize, ySize);
+      //  setSize(1000, 500);
         setVisible(true);
         setTitle(uname);
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -65,25 +66,32 @@ class DataPage extends JFrame {
             if (abc.size() == 0) {
                 jb[0] = new JLabel("None");
             } else {
+                jp=new JPanel();
+                add(jp);
+                jp.setLayout(new BoxLayout(jp, BoxLayout.Y_AXIS));
                 flag = false;
                 jb[0] = new JLabel("Username: " + abc.get(0).getName());
 
                 jb[1] = new JLabel("Mac: " + abc.get(0).getMac());
-                jb[2] = new JLabel("IP: " + abc.get(0).getIP()+idt.size());
+                jb[2] = new JLabel("IP: " + abc.get(0).getIP()+" Total Software "+(idt.size()-1));
 
-                add(jb[0]);
-                add(jb[1]);
-                add(jb[2]);
+                jp.add(jb[0]);
+                jp.add(jb[1]);
+                jp.add(jb[2]);
                 
                  String header[] = new String[]{"ID", "Software - name:", "Version number: "};
             dtm.setColumnIdentifiers(header);
 
             tbl.setModel(dtm);
-            for (int j = 0; j < 137; j++) {
-                i++;
-                dtm.addRow(new Object[]{i, idt.get(i).getSoftName(), idt.get(i).getVersion()});
+            for (int j = 0; j < idt.size(); j++) {
+                
+          //      dtm.insertRow(tbl.getRowCount()+1, new Object[]{i, idt.get(i).getSoftName(), idt.get(i).getVersion()});
+               
+dtm.addRow(new Object[]{i, idt.get(i).getSoftName(), idt.get(i).getVersion()});
+            i++; 
             }
-             add(new JScrollPane(tbl));
+           // dtm.insertRow(ERROR, header);
+             jp.add(new JScrollPane(tbl));
             }
 
         } 
