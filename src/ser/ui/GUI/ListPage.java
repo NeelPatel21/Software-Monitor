@@ -1,4 +1,5 @@
 package ser.ui.GUI;
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -25,33 +26,31 @@ class ListPage extends JFrame {
     
     public String getname(Object x)
     {
-        if(!(x instanceof JButton))
-            return null;
+       // if(!(x instanceof JButton))
+         //   return null;
         for(int i=0;i<jb.length;i++){
             if(jb[i]==x)
-                uname=jl[i].toString();
+                uname=jl[i].getText();
         }
         return uname;
     }
     
     public String getUserName(LocalDate ld,IntAdmin ia){
+        
         this.ia=ia;
+        
         //System.out.println("listpage: "+ld+ia);
         //System.out.println(ld);
         //System.out.println(ia);
-        JScrollPane scroll = new JScrollPane();
-        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);		
-		
         List<String> abc ;//new ArrayList<String>();
         
         //abc.add("hello");
         //abc.add("world");
         abc = ia.getAllUname(ld);
-        for(int k=0;k<10;k++)
+        //for(int k=0;k<10;k++)
         //abc.add("hello");
         //abc.add("world");
-        System.out.println(abc);
+        //System.out.println(abc);
         int i=0;
         jl = new JLabel[abc.size()];
         jb = new JButton[abc.size()];

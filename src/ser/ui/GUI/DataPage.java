@@ -18,6 +18,7 @@ package ser.ui.GUI;
 
 import com.dataBean.IntDataBean;
 import com.dataBean.IntDataTuple;
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.time.LocalDate;
@@ -43,18 +44,14 @@ class DataPage extends JFrame {
     
     
     public DataPage(IntAdmin ia,String uname,LocalDate dt){
-        //System.out.println("arrived");
         this.ia=ia;
         Toolkit tk = Toolkit.getDefaultToolkit();
         int xSize = ((int) tk.getScreenSize().getWidth());
         int ySize = ((int) tk.getScreenSize().getHeight());
         setSize(xSize,ySize);
-        JScrollPane scroll = new JScrollPane();
-        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);		
-	jl = new JLabel[6];
+        jl = new JLabel[6];
         empty = new JLabel[6];
-        List<IntDataBean> abc = ia.getUserDetail("Neel Patel", dt);
+        List<IntDataBean> abc = ia.getUserDetail(uname, dt);
         jl[0]=new JLabel("Username : "+uname);
         jl[0].setVerticalAlignment(SwingConstants.CENTER);
         jl[1]=new JLabel("IP Address : "+(abc.size()>0?(abc.get(0).getIP()):""));

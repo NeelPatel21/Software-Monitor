@@ -20,6 +20,7 @@ import ser.admin.Admin;
 import ser.admin.IntAdmin;
 import ser.db.IntDataBase;
 import ser.db.logData.LogDataBase;
+import ser.ui.GUI.StartPage;
 import ser.ui.IntUI;
 import ser.ui.cli.BasicCli;
 
@@ -32,7 +33,7 @@ public class BasicCliTest {
     public static void main(String arg[]){
         IntDataBase db=new LogDataBase(Paths.get("temp","log").toAbsolutePath());
         IntAdmin ia=new Admin(db);
-        IntUI cli=new BasicCli(ia);
+        IntUI cli=new StartPage(ia);
         cli.start();
     }
 }
