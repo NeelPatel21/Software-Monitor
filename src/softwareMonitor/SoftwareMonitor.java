@@ -16,18 +16,15 @@
 package softwareMonitor;
 
 import client.flow.ClientFlow;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import ser.admin.Admin;
 import ser.admin.IntAdmin;
 import ser.db.IntDataBase;
 import ser.db.logData.LogDataBase;
+import ser.ui.GUI.StartPage;
 import ser.ui.IntUI;
-import ser.ui.cli.BasicCli;
 
 /**
  *
@@ -42,7 +39,7 @@ public class SoftwareMonitor {
     public static void AdminLogCli(){
         IntDataBase db=new LogDataBase(Paths.get("temp","log").toAbsolutePath());
         IntAdmin ia=new Admin(db);
-        IntUI cli=new BasicCli(ia);
+        IntUI cli=new StartPage(ia);
         cli.start();
     }
     

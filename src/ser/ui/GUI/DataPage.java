@@ -1,27 +1,13 @@
-/*
-* Copyright 2017 Program Tester Team
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-
-*     http://www.apache.org/licenses/LICENSE-2.0
-
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-* package lib.adminModule;
-*/
 package ser.ui.GUI;
 
 import com.dataBean.IntDataBean;
 import com.dataBean.IntDataTuple;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.GridLayout;
+import java.awt.ScrollPane;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,123 +15,83 @@ import java.time.LocalDate;
 import java.util.List;
 import javax.swing.*;
 import javax.swing.JLabel;
+import javax.swing.table.DefaultTableModel;
 import ser.admin.IntAdmin;
 
 class DataPage extends JFrame {
+
+    JPanel jp = null;
     List<IntDataBean> abc = null;
     IntAdmin ia = null;
     boolean flag = true;
     JLabel[] jb = new JLabel[3];
-    
-    JLabel[] js = new JLabel[30];
-    JLabel[] jv = new JLabel[30];
-    //JLabel jss = new JLabel();
-    //JLabel jvv=new JLabel();
+
+    JLabel[] js = new JLabel[10];
+    JLabel[] jv = new JLabel[10];
+    JLabel jss = new JLabel();
+    JLabel jvv = new JLabel();
     JButton jnext = null;
     JButton jprev = null;
-    int i= 0;
+    int i = 0;
     int page_number = 1;
     String uname = "";
     List<IntDataTuple> idt = null;
-    public DataPage(IntAdmin ia,String uname,LocalDate dt){
-        js[0]=new JLabel();
+    JTable tbl = new JTable();
+    DefaultTableModel dtm = new DefaultTableModel(0, 0);
+
+    public DataPage(IntAdmin ia, String uname, LocalDate dt) {
+        js[0] = new JLabel();
         this.uname = uname;
-        //setLayout(new ());
-        setLayout(new GridLayout(35, 1));
+        setLayout(new FlowLayout());
+        //setLayout(new GridLayout(11, 3));
         //Toolkit tk = Toolkit.getDefaultToolkit();
         //int xSize = ((int) tk.getScreenSize().getWidth());
         //int ySize = ((int) tk.getScreenSize().getHeight());
-        setSize(1000,1000);
-        setMaximumSize(new Dimension(1000,1000));
-        setMinimumSize(new Dimension(1000,1000));
+        //setSize(xSize, ySize);
+        setSize(600,600);
         setVisible(true);
-        
+        setTitle(uname);
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
-     
-        abc= ia.getUserDetail(uname, dt);
+
+        abc = ia.getUserDetail(uname, dt);
         idt = abc.get(0).getSoftDetail();
-       
-        
+
     }
-    public void paint(Graphics g)
-    {
+
+    public void paint(Graphics g) {
         //g.drawString("PArth",50, 50);
-         
-         //System.out.println(abc.size());
-         jb[0] = new JLabel("Username: "+abc.get(0).getName());
-         
-         jb[1]= new JLabel("Mac: "+abc.get(0).getMac());
-         jb[2]= new JLabel("IP: "+abc.get(0).getIP());
-         
-        // add(jb[0]);
-         add(jb[1]);
-         add(jb[2]);
-       
-             for(int l=0;l<30;l++){
-         js[l]=new JLabel();
-         jv[l]=new JLabel();
-         add(js[l]);
-         add(jv[l]);
-         }
-        
-        
-        
-         JLabel jss = new JLabel("Software - name: ");
-         JLabel jvv = new JLabel("Version number: ");
-        JLabel jvv1 = new JLabel("   ");
-         //jss.setPreferredSize(new Dimension(50,50));
-         //jvv.setPreferredSize(new Dimension(50,50));
+        if (flag) {
+            //System.out.println(abc.size());
+            if (abc.size() == 0) {
+                jb[0] = new JLabel("None");
+            } else {
+                flag = false;
+                jb[0] = new JLabel("Username: " + abc.get(0).getName());
 
-         add(jss);
-         add(jvv);
-        // add(jvv1);
-         for(int j=0;j<30;j++)
-         {
-             //System.out.println(j); 
-             //js[j] = new JLabel();
-            js[j].setText(idt.get(i).getSoftName());
-             System.out.println(idt.get(i).getSoftName());
-             jv[j].setText(idt.get(i).getVersion());
-             add(js[j]);
-             add(jv[j]);
-             i++;
-         }
-     
-     jnext = new JButton("next");
-     jprev = new JButton("prev");
-     //add(jnext);
-     //add(jprev);/*
-     jnext.addActionListener(new ActionListener()
-     {
+                jb[1] = new JLabel("Mac: " + abc.get(0).getMac());
+                jb[2] = new JLabel("IP: " + abc.get(0).getIP()+idt.size());
 
-         @Override
-         public void actionPerformed(ActionEvent e) {
-                    //DataPage.this.repaint();
-                    //getContentPane().repaint();
-                     //getContentPane().repaint();
-                     //thisrepaint();
-       //              DataPage.this.removeAll(); 
-               //      DataPage.this.repaint();
-                      
-                      
-         }
-    });
-     jprev.addActionListener(new ActionListener()
-     {
+                add(jb[0]);
+                add(jb[1]);
+                add(jb[2]);
+                
+                 String header[] = new String[]{"ID", "Software - name:", "Version number: "};
+            dtm.setColumnIdentifiers(header);
 
-         @Override
-         public void actionPerformed(ActionEvent e) {
-             
-             //DataPage.this.repaint(); 
-              //getContentPane().repaint();
-         //     DataPage.this.removeAll();
-             //repaint();
-              //getContentPane().return 
-               //getContentPane().repaint();
-         }
-    });*/
-     
+            tbl.setModel(dtm);
+            for (int j = 0; j < 137; j++) {
+                i++;
+                dtm.addRow(new Object[]{i, idt.get(i).getSoftName(), idt.get(i).getVersion()});
+            }
+             add(new JScrollPane(tbl));
+            }
+
+        } 
+
+      
         
+
+        // pack(); 
     }
 }
 /*
