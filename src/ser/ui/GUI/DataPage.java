@@ -41,16 +41,18 @@ class DataPage extends JFrame {
     //JPanel p1,p2;
     
     public DataPage(IntAdmin ia,String uname,LocalDate dt){
+        //System.out.println("arrived");
         this.ia=ia;
         Toolkit tk = Toolkit.getDefaultToolkit();
         int xSize = ((int) tk.getScreenSize().getWidth());
         int ySize = ((int) tk.getScreenSize().getHeight());
         setSize(xSize,ySize);
-        
+        jl = new JLabel[3];
+        empty = new JLabel[6];
         List<IntDataBean> abc = ia.getUserDetail(uname, dt);
-        jl[1]=new JLabel("Username : "+uname);
-        jl[2]=new JLabel("IP Address : "+abc.get(0).getIP());
-        jl[3]=new JLabel("Mac Address : "+abc.get(0).getMac());
+        jl[0]=new JLabel("Username : "+uname);
+        jl[1]=new JLabel("IP Address : "+abc.get(0).getIP());
+        jl[2]=new JLabel("Mac Address : "+abc.get(0).getMac());
         add(jl[0]);
         add(empty[0]);
         add(empty[1]);
@@ -58,6 +60,8 @@ class DataPage extends JFrame {
         add(empty[2]);
         add(empty[3]);
         add(jl[2]);
+        add(empty[4]);
+        add(empty[5]);
         //Panel 1 ends
         jl[3]=new JLabel("Software Name");
         jl[4]=new JLabel("Version");
@@ -65,8 +69,12 @@ class DataPage extends JFrame {
         //new JPanel(new GridLayout(abc.size(), 3));
         add(jl[3]);
         add(jl[4]);
-        add(jl[4]);
+        add(jl[5]);
         int i = 0;
+        JLabel[] sname=new JLabel[abc.get(0).getSoftDetail().size()];
+        JLabel[] ver=new JLabel[abc.get(0).getSoftDetail().size()];
+        JLabel[] idate=new JLabel[abc.get(0).getSoftDetail().size()];
+        
         for(IntDataBean p:abc){
             for(IntDataTuple idt:p.getSoftDetail()){
                 sname[i]=new JLabel(idt.getSoftName());

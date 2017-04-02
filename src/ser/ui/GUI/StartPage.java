@@ -16,8 +16,6 @@
 
 package ser.ui.GUI;
 
-import java.awt.FlowLayout;
-import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -27,7 +25,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import ser.admin.IntAdmin;
 import ser.ui.IntUI;
-import java.util.List;
 
 /**
  *
@@ -35,66 +32,114 @@ import java.util.List;
  */
 
 public class StartPage extends JFrame implements IntUI{
-    JLabel jl=new JLabel("Enter Date : ");
+    JLabel jl;
     JButton[] jb=new JButton[3];
     JTextField jtf;
     LocalDate date;
     IntAdmin ia=null;
-
+    LocalDate ld=null;
+    String uname=null;
+    
     public StartPage(IntAdmin ia) {
         this.ia=ia;
+        
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    public LocalDate getDate(IntAdmin ia){
-        this.ia=ia;
-        add(jl);
+    public void getDate(){
         setVisible(true);
         Toolkit tk = Toolkit.getDefaultToolkit();
         int xSize = ((int) tk.getScreenSize().getWidth());
         int ySize = ((int) tk.getScreenSize().getHeight());
         setSize(xSize,ySize);
         setLayout(new GridLayout(10, 1));
+        jl=new JLabel("Enter Date : ");
+        add(jl);
         jtf=new JTextField(0);
-        jtf.setText(LocalDate.now().toString());
-        String sdate=jtf.getText();
         
+        jtf.setText(LocalDate.now().toString());
         add(jtf);
+        String sdate=jtf.getText();
+        System.out.println(sdate+" done");
         jb[0]=new JButton("Update");
         jb[0].addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
             try {
             date = LocalDate.parse(sdate);
+                System.out.println("date: "+date);
+                ListPage lp = new ListPage(ia);
+                System.out.println("before");
+                uname=lp.getUserName(returnDate(),ia);
+                System.out.println("after");
             } catch (Exception ex) {
+                System.out.println("date exe");
             showMessage("Invalid Date Format");
         }
             }
         });
+        add(jb[0]);
+        
         jb[1]=new JButton("Start Server");
         jb[1].addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ia.startSer();
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
+        add(jb[1]);
         jb[2]=new JButton("Stop Server");
         jb[2].addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ia.stopSer();
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
         
-        add(jl);
-        add(jtf);
-        add(jb[0]);
-        add(jb[1]);
+        
+        
         add(jb[2]);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-    return date;
+        System.out.println("date 2: "+date);
+    //return date;
 }
+    public LocalDate returnDate()
+    {
+        return date;
+    }
+    
+    @Override
+    public void showMessage(String msg) {
+        /**
+         * This method opens a dialog box showing a message
+         */
+        JOptionPane.showMessageDialog(null, msg, "Message Box", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    @Override
+    public String showPrompt(String msg) {
+        /**
+         * This method is called when a user input is required
+         */
+        String mes =(JOptionPane.showInputDialog(msg));
+        return mes;
+    }
+
+    @Override
+    public void start() {
+        //StartPage sp=new StartPage(ia);
+        getDate();
+        //ld=returnDate();
+       // System.out.println(ld);
+       // ListPage lp=new ListPage();
+       // uname=lp.getUserName(ld,ia);
+        //DataPage dp=new DataPage(ia, uname, ld);
+    }
+
+    @Override
+    public void close() throws IOException {
+        
+    }
+ }
     /*
     LocalDate date;
     final IntAdmin ia;
@@ -190,29 +235,3 @@ public class StartPage extends JFrame implements IntUI{
         jb1[4].setEnabled(false);
     }
 */
-    @Override
-    public void showMessage(String msg) {
-        /**
-         * This method opens a dialog box showing a message
-         */
-        JOptionPane.showMessageDialog(null, msg, "Message Box", JOptionPane.INFORMATION_MESSAGE);
-    }
-
-    @Override
-    public String showPrompt(String msg) {
-        /**
-         * This method is called when a user input is required
-         */
-        String mes =(JOptionPane.showInputDialog(msg));
-        return mes;
-    }
-
-    @Override
-    public void start() {
-    }
-
-    @Override
-    public void close() throws IOException {
-        
-    }
- }

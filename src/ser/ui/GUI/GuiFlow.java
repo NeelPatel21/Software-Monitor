@@ -12,7 +12,7 @@ public class GuiFlow{
     String uname=null;
     public void start(){
         StartPage sp=new StartPage(ia);
-        ld=sp.getDate(ia);
+        ld=sp.getDate();
         ListPage lp=new ListPage();
         uname=lp.getUserName(ld,ia);
         DataPage dp=new DataPage(ia, uname, ld);

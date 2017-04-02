@@ -16,15 +16,40 @@ class ListPage extends JFrame {
     IntAdmin ia;
     String uname=null;
     
-    public String getname()
+    public ListPage(IntAdmin ia)
     {
-        return ;
+        this.ia = ia;
     }
+    
+    public String getname(Object x)
+    {
+        if(!(x instanceof JButton))
+            return null;
+        for(int i=0;i<jb.length;i++){
+            if(jb[i]==x)
+                uname=jl[i].toString();
+        }
+        return uname;
+    }
+    
     public String getUserName(LocalDate ld,IntAdmin ia){
         this.ia=ia;
+        System.out.println("listpage: "+ld+ia);
+        System.out.println(ld);
+        System.out.println(ia);
         
-        List<String> abc = ia.getAllUname(ld);
+        List<String> abc ;//new ArrayList<String>();
+        
+        //abc.add("hello");
+        //abc.add("world");
+        abc = ia.getAllUname(ld);
+        for(int k=0;k<10;k++)
+        //abc.add("hello");
+        //abc.add("world");
+        System.out.println(abc);
         int i=0;
+        jl = new JLabel[abc.size()];
+        jb = new JButton[abc.size()];
         for(String username:abc)
         {
             jl[i] = new JLabel(username);
@@ -34,18 +59,20 @@ class ListPage extends JFrame {
             jb[i].addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                   uname=getname();
+                   String name =  getname(e.getSource());
+                   DataPage dp = new DataPage(ia,name,ld);
                 }
             });
             i++;
         }
-        setVisible(true);
+        System.out.println("hello world  at end");
         Toolkit tk = Toolkit.getDefaultToolkit();
         int xSize = ((int) tk.getScreenSize().getWidth());
         int ySize = ((int) tk.getScreenSize().getHeight());
+        setVisible(true);
+        //setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(xSize,ySize);
         setLayout(new GridLayout(abc.size(), 1));
-        //setVisible(true);
         return uname;
         
     }
