@@ -33,6 +33,7 @@ import static ser.UrlTools.registerObj;
 import static ser.config.Configuration.setDefaultLogDir;
 import ser.db.IntDataBase;
 import ser.keyGen.KeyGen;
+import ser.logger.IntLogger;
 import ser.logger.MyLog;
 import ser.ui.IntUI;
 
@@ -42,11 +43,18 @@ import ser.ui.IntUI;
  */
 public class Admin implements IntAdmin{
     private Scanner sc=new Scanner(System.in);
+    private final IntDataBase ld;
     private final IntDataBase db;
     private IntUI ui;
     private String u="";
     
-    public Admin(IntDataBase db){
+    public Admin(IntDataBase ld){
+        this.ld=ld;
+        this.db=null;
+    }
+    
+    public Admin(IntDataBase ld,IntDataBase db){
+        this.ld=ld;
         this.db=db;
     }
     
@@ -62,6 +70,12 @@ public class Admin implements IntAdmin{
             MainSerHandle mh=new MainSerHandle();
             mh.setKeysp(KeyGen::getKey);
             mh.setLoger(mg::log);
+            try{
+                if(db!=null)
+                    mh.setLoger((IntLogger)db);
+            }catch(Exception ex){
+                
+            }
             IntMainSer ms=new MainSer(mh);
             try{
                 Registry r=LocateRegistry.createRegistry(8686);
@@ -72,7 +86,8 @@ public class Admin implements IntAdmin{
             ui.showMessage("uri :- "+uri);
             u=uri;
         }catch(Exception ex){
-            System.err.println("error :- "+ex);
+            System.err.println("error1 :- "+ex);
+            ex.printStackTrace();
         }
     }
 
@@ -91,12 +106,16 @@ public class Admin implements IntAdmin{
 
     @Override
     public List<String> getAllUname(LocalDate dt) {
-        return db.getAllUserName(dt);
+        if(db!=null)
+            return db.getAllUserName(dt);
+        return ld.getAllUserName(dt);
     }
 
     @Override
     public List<IntDataBean> getUserDetail(String uName, LocalDate dt) {
-        return db.getUserDetail(uName, dt, dt.plusDays(1));
+        if(db!=null)
+            return db.getUserDetail(uName, dt, dt.plusDays(1));
+        return ld.getUserDetail(uName, dt, dt.plusDays(1));
     }
 
     @Override
