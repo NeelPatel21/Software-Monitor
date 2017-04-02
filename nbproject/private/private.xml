@@ -3,9 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/My%20folder/Fun/Data/Software%20Monitor/src/ser/keyGen/KeyGen.java</file>
             <file>file:/C:/My%20folder/Fun/Data/Software%20Monitor/src/ser/db/IntDataBase.java</file>
+            <file>file:/C:/My%20folder/Fun/Data/Software%20Monitor/src/ser/ui/IntUI.java</file>
+            <file>file:/C:/My%20folder/Fun/Data/Software%20Monitor/src/ser/logger/MyLog.java</file>
+            <file>file:/C:/My%20folder/Fun/Data/Software%20Monitor/src/ser/logger/IntLogger.java</file>
+            <file>file:/C:/My%20folder/Fun/Data/Software%20Monitor/src/ser/admin/Admin.java</file>
+            <file>file:/C:/My%20folder/Fun/Data/Software%20Monitor/test/cliTest/BasicCliTest.java</file>
+            <file>file:/C:/My%20folder/Fun/Data/Software%20Monitor/src/ser/ui/cli/BasicCli.java</file>
+            <file>file:/C:/My%20folder/Fun/Data/Software%20Monitor/src/ser/db/logData/LogDataBase.java</file>
             <file>file:/C:/My%20folder/Fun/Data/Software%20Monitor/test/serTest/ClientTest.java</file>
-            <file>file:/C:/My%20folder/Fun/Data/Software%20Monitor/test/serTest/MainSerTest.java</file>
+            <file>file:/C:/My%20folder/Fun/Data/Software%20Monitor/src/ser/logger/LogTools.java</file>
         </group>
     </open-files>
 </project-private>

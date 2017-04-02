@@ -24,9 +24,32 @@ import java.util.List;
  * @author Neel Patel
  */
 public interface IntDataBean extends Serializable{
+    /**
+     * implementation of this method should return the time when
+       the object is created.
+     * @return object of LocalDateTime representing the creation date and time.
+     */
     LocalDateTime getTime();
+    
+    /**
+     * implementation of this method should return the list of
+       the IntDataTuple representing the information about the software.
+     * @return list of type IntDataTuple.
+     */
     List<IntDataTuple> getSoftDetail();
+    
+    /**
+     * @return user name.
+     */
     String getName();
+    
+    /**
+     * @return ip address of the computer.
+     */
     String getIP();
+    
+    /**
+     * @return mac address of the computer.
+     */
     String getMac();
 }

@@ -24,7 +24,9 @@ import java.time.format.DateTimeFormatter;
 import static ser.config.Configuration.getDefaultLogDir;
 
 /**
- *
+ * this class provide the functionality to store logs in simple
+   text formate.
+ * this class manage the logs by the date.
  * @author Neel Patel
  */
 public class MyLog implements IntLogger{

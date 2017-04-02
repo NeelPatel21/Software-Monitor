@@ -15,9 +15,6 @@
  */
 package com.dataBean;
 
-import java.net.InetAddress;
-import java.net.NetworkInterface;
-import java.net.UnknownHostException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -53,26 +50,44 @@ class DataBean implements IntDataBean{
         this.mac=mac;
     }
     
+    /**
+     * @return object of LocaldateTime.
+     */
     @Override
     public LocalDateTime getTime() {
         return dt;
     }
 
+    /**
+     * this method returns the all details of software.
+     * @return List of IntDataTuple.
+     */
     @Override
     public List<IntDataTuple> getSoftDetail() {
         return Collections.unmodifiableList(sd);
     }
 
+    /**
+     * @return name of the user.
+     */
     @Override
     public String getName() {
         return name;
     }
 
+    /**
+     * @return ip address of the computer from which the software
+       details have been fetched.
+     */
     @Override
     public String getIP() {
         return ip;
     }
 
+    /**
+     * @return mac address of the computer from which the software
+       details have been fetched.
+     */
     @Override
     public String getMac() {
         return mac;

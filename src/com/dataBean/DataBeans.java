@@ -17,14 +17,10 @@ package com.dataBean;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
-import java.net.UnknownHostException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
@@ -38,10 +34,11 @@ public class DataBeans {
     /**
      * returns immutable object of type IntDataBean.
      * getTime method of the Object returned by this method will return
-       Object of LocalDateTime which shows the information of 
-     * @param sd
-     * @param name
-     * @return 
+       Object of LocalDateTime which shows the date and time when the
+       object is created.
+     * @param sd list of software name.
+     * @param name user name.
+     * @return Immutable object of IntDataBean.
      */
     public static IntDataBean getDataBean(List<String> sd,String name){
         return new DataBean(sd.stream().map(i->getDataTuple(i))
@@ -50,12 +47,10 @@ public class DataBeans {
     
     /**
      * returns immutable object of type IntDataBean.
-     * getTime method of the Object returned by this method will return
-       Object of LocalDateTime which shows the information of instalation date.
      * @param sd List of Software details.
      * @param name user name.
      * @param ld object of type LocalDate.
-     * @return object of type IntDataBean.
+     * @return immutable object of type IntDataBean.
      */
     public static IntDataBean getDataBean(List<String> sd,String name,LocalDate ld){
         return new DataBean(sd.stream().map(i->getDataTuple(i))
@@ -65,10 +60,13 @@ public class DataBeans {
     /**
      * returns immutable object of type IntDataBean.
      * getTime method of the Object returned by this method will return
-       Object of LocalDateTime which shows the information of 
-     * @param sd
-     * @param name
-     * @return 
+       Object of LocalDateTime which shows the date and time when the
+       object is created.
+     * {@code getIP} and{@code getMac} methods will not work on the object
+       return by this method.
+     * @param sd List of IntDataTuple.
+     * @param name user name.
+     * @return immutable Object of type IntDataBean.
      */
     public static IntDataBean getNewDataBean(List<IntDataTuple> sd,String name){
         return new DataBean(sd,name);
@@ -77,10 +75,14 @@ public class DataBeans {
     /**
      * returns immutable object of type IntDataBean.
      * getTime method of the Object returned by this method will return
-       Object of LocalDateTime which shows the information of 
-     * @param sd
-     * @param name
-     * @return 
+       Object of LocalDateTime which shows the date & time when the
+       object is created.
+     * {@code getIP} and{@code getMac} methods of the object return by
+       this method will return the ip address and mac address of the pc
+       where the object is created respectively.
+     * @param sd list of IntDataTuples.
+     * @param name user name.
+     * @return immutable object of type IntDataBean.
      */
     public static IntDataBean getAddDataBean(List<IntDataTuple> sd,String name){
         try {
@@ -98,6 +100,14 @@ public class DataBeans {
         }
     }
     
+    /**
+     * @param sd list of IntDataTuple.
+     * @param name user name
+     * @param dt object of LocaldateTime.
+     * @param ip ip address. 
+     * @param mac mac address.
+     * @return object of type IntDataBean.
+     */
     public static IntDataBean getAddDataBean(List<IntDataTuple> sd,String name,
               LocalDateTime dt,String ip,String mac){
         return new DataBean(sd,name,dt,ip,mac);
@@ -105,22 +115,34 @@ public class DataBeans {
     
     /**
      * returns immutable object of type IntDataBean.
-     * getTime method of the Object returned by this method will return
-       Object of LocalDateTime which shows the information of 
-     * @param sd
-     * @param name
-     * @param ld
-     * @return 
+     * @param sd list of the IntDataTuple.
+     * @param name user name.
+     * @param ld object of type LocalDate.
+     * @return object of type IntDataBean.
      */
     public static IntDataBean getNewDataBean(List<IntDataTuple> sd,String name
               ,LocalDate ld){
         return new DataBean(sd,name,LocalDateTime.of(ld, LocalTime.now()));
     }
     
+    /**
+     * this method return tuple of type IntDataTuple which represent
+       the information of any single software.
+     * @param sName software name.
+     * @param ver software version.
+     * @param date installation date.
+     * @return object of type IntDataTuple.
+     */
     public static IntDataTuple getDataTuple(String sName,String ver,LocalDate date){
         return new DataTuple(sName,ver,date);
     }
     
+    /**
+     * this method map the software name to tuple.
+     * the tuple returned by this software have only one detail which is name.
+     * @param sName software name.
+     * @return Object of type IntDataTuple.
+     */
     public static IntDataTuple getDataTuple(String sName){
         return new DataTuple(sName,"",null);
     }

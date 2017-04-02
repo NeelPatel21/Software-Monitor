@@ -18,7 +18,6 @@ package com.net.remSer;
 import com.dataBean.IntDataBean;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 import java.util.function.Supplier;
 import ser.logger.IntLogger;
 
@@ -30,6 +29,11 @@ public class MainSerHandle {
     private Supplier<String> keysp=()->"";
     private List<IntLogger> flog=new ArrayList<>();
     
+    /**
+     * this method return unique the key.
+     * @param uName user name.
+     * @return key as String.
+     */
     public synchronized String getKey(String uName){
         try{
             System.out.println("get key check");
@@ -40,16 +44,32 @@ public class MainSerHandle {
         }
     }
     
+    /**
+     * this method register the logger.
+     * the registered logger will be logged when the log arrived.
+     * @param flog Object of type IntLogger.
+     * @return true if successfully registered, false otherwise.
+     */
     public synchronized boolean setLoger(IntLogger flog){
         this.flog.add(flog);
         return true;
     }
     
+    /**
+     * this method set the keySupplier.
+     * @param sp keySupplier.
+     * @return ture if successfully sat.
+     */
     public synchronized boolean setKeysp(Supplier<String> sp){
         keysp=sp;
         return true;
     }
     
+    /**
+     * this method will call the log method of all the registered loggers.
+     * @param db object of type IntDataBean.
+     * @return true if all the registered logger have logged successfully.
+     */
     public synchronized boolean log(IntDataBean db){
         try{
             System.out.println("log check");
