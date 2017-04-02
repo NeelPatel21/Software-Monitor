@@ -11,7 +11,6 @@ import ser.ui.IntUI;
 class GuiTest{
     public static void main(String[] args) {
         IntDataBase db=new LogDataBase(Paths.get("temp","log").toAbsolutePath());
-        
         IntAdmin ia=new Admin(db);
         System.out.println(ia);
         IntUI cli=new StartPage(ia);

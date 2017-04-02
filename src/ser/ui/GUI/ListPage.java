@@ -8,6 +8,8 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.SwingConstants;
 import ser.admin.IntAdmin;
 
 class ListPage extends JFrame {
@@ -34,10 +36,13 @@ class ListPage extends JFrame {
     
     public String getUserName(LocalDate ld,IntAdmin ia){
         this.ia=ia;
-        System.out.println("listpage: "+ld+ia);
-        System.out.println(ld);
-        System.out.println(ia);
-        
+        //System.out.println("listpage: "+ld+ia);
+        //System.out.println(ld);
+        //System.out.println(ia);
+        JScrollPane scroll = new JScrollPane(this);
+        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);		
+		
         List<String> abc ;//new ArrayList<String>();
         
         //abc.add("hello");
@@ -53,8 +58,10 @@ class ListPage extends JFrame {
         for(String username:abc)
         {
             jl[i] = new JLabel(username);
+            jl[i].setVerticalAlignment(SwingConstants.CENTER);
             add(jl[i]);
             jb[i] = new JButton("Get Details");
+            jb[i].setVerticalAlignment(SwingConstants.CENTER);
             add(jb[i]);
             jb[i].addActionListener(new ActionListener() {
                 @Override
@@ -74,6 +81,5 @@ class ListPage extends JFrame {
         setSize(xSize,ySize);
         setLayout(new GridLayout(abc.size(), 1));
         return uname;
-        
     }
 }

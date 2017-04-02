@@ -22,7 +22,10 @@ import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.time.LocalDate;
 import java.util.List;
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.SwingConstants;
 import ser.admin.IntAdmin;
 
 /**
@@ -38,7 +41,6 @@ class DataPage extends JFrame {
     JLabel[] ver;
     JLabel[] idate;
     
-    //JPanel p1,p2;
     
     public DataPage(IntAdmin ia,String uname,LocalDate dt){
         //System.out.println("arrived");
@@ -47,12 +49,18 @@ class DataPage extends JFrame {
         int xSize = ((int) tk.getScreenSize().getWidth());
         int ySize = ((int) tk.getScreenSize().getHeight());
         setSize(xSize,ySize);
-        jl = new JLabel[3];
+        JScrollPane scroll = new JScrollPane(this);
+        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);		
+	jl = new JLabel[3];
         empty = new JLabel[6];
         List<IntDataBean> abc = ia.getUserDetail(uname, dt);
         jl[0]=new JLabel("Username : "+uname);
+        jl[0].setVerticalAlignment(SwingConstants.CENTER);
         jl[1]=new JLabel("IP Address : "+abc.get(0).getIP());
+        jl[1].setVerticalAlignment(SwingConstants.CENTER);
         jl[2]=new JLabel("Mac Address : "+abc.get(0).getMac());
+        jl[2].setVerticalAlignment(SwingConstants.CENTER);
         add(jl[0]);
         add(empty[0]);
         add(empty[1]);
@@ -62,31 +70,36 @@ class DataPage extends JFrame {
         add(jl[2]);
         add(empty[4]);
         add(empty[5]);
-        //Panel 1 ends
+        //Top ends
         jl[3]=new JLabel("Software Name");
-        jl[4]=new JLabel("Version");
-        jl[5]=new JLabel("Installed Date");
-        //new JPanel(new GridLayout(abc.size(), 3));
+        jl[3].setVerticalAlignment(SwingConstants.CENTER);
         add(jl[3]);
+        jl[4]=new JLabel("Version");
+        jl[4].setVerticalAlignment(SwingConstants.CENTER);
         add(jl[4]);
+        jl[5]=new JLabel("Installed Date");
+        jl[5].setVerticalAlignment(SwingConstants.CENTER);
         add(jl[5]);
         int i = 0;
         JLabel[] sname=new JLabel[abc.get(0).getSoftDetail().size()];
         JLabel[] ver=new JLabel[abc.get(0).getSoftDetail().size()];
         JLabel[] idate=new JLabel[abc.get(0).getSoftDetail().size()];
+        setLayout(new GridLayout(abc.get(0).getSoftDetail().size()+5, 3));
         
         for(IntDataBean p:abc){
             for(IntDataTuple idt:p.getSoftDetail()){
                 sname[i]=new JLabel(idt.getSoftName());
-                ver[i]=new JLabel(idt.getVersion());
-                idate[i]=new JLabel(idt.getDate().toString());
+                sname[i].setVerticalAlignment(SwingConstants.CENTER);
                 add(sname[i]);
+                ver[i]=new JLabel(idt.getVersion());
+                ver[i].setVerticalAlignment(SwingConstants.CENTER);
                 add(ver[i]);
+                idate[i]=new JLabel(idt.getDate().toString());
+                idate[i].setVerticalAlignment(SwingConstants.CENTER);
                 add(idate[i]);
                 i++;
             }
         }
-        setLayout(new GridLayout(abc.size(), 3));
         setVisible(true);
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
     }

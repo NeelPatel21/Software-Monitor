@@ -53,14 +53,15 @@ public class StartPage extends JFrame implements IntUI{
         setSize(xSize,ySize);
         setLayout(new GridLayout(10, 1));
         jl=new JLabel("Enter Date : ");
+        jl.setVerticalAlignment(SwingConstants.CENTER);
         add(jl);
         jtf=new JTextField(0);
-        
         jtf.setText(LocalDate.now().toString());
         add(jtf);
         String sdate=jtf.getText();
-        System.out.println(sdate+" done");
+        //System.out.println(sdate+" done");
         jb[0]=new JButton("Update");
+        jb[0].setVerticalAlignment(SwingConstants.CENTER);
         jb[0].addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -68,18 +69,20 @@ public class StartPage extends JFrame implements IntUI{
             date = LocalDate.parse(sdate);
                 System.out.println("date: "+date);
                 ListPage lp = new ListPage(ia);
-                System.out.println("before");
+            //    System.out.println("before");
                 uname=lp.getUserName(returnDate(),ia);
-                System.out.println("after");
+              //  System.out.println("after");
             } catch (Exception ex) {
-                System.out.println("date exe");
+               // System.out.println("date exe");
             showMessage("Invalid Date Format");
-        }
+            ex.printStackTrace();
             }
+           }
         });
         add(jb[0]);
         
         jb[1]=new JButton("Start Server");
+        jb[1].setVerticalAlignment(SwingConstants.CENTER);
         jb[1].addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -88,6 +91,7 @@ public class StartPage extends JFrame implements IntUI{
         });
         add(jb[1]);
         jb[2]=new JButton("Stop Server");
+        jb[2].setVerticalAlignment(SwingConstants.CENTER);
         jb[2].addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -95,11 +99,9 @@ public class StartPage extends JFrame implements IntUI{
             }
         });
         
-        
-        
         add(jb[2]);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        System.out.println("date 2: "+date);
+        //System.out.println("date 2: "+date);
     //return date;
 }
     public LocalDate returnDate()
