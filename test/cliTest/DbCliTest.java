@@ -33,7 +33,7 @@ public class DbCliTest {
     //private BasicCliTest(IntAdmin ia){}
     public static void main(String arg[]){
         IntDataBase ld=new LogDataBase(Paths.get("temp","log").toAbsolutePath());
-        IntDataBase db=DBCon.getDBObject("temp","root","");
+        IntDataBase db=DBCon.getDBObject("temp","root","root");
         IntAdmin ia=new Admin(ld,db);
         IntUI cli=new BasicCli(ia);
         cli.start();

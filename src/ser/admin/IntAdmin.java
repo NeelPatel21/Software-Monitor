@@ -31,6 +31,7 @@ public interface IntAdmin extends Closeable{
     void stopSer();
     void condb();
     void remdb();
+    List<String> getAuthorized();
     List<String> getAllUname(LocalDate dt);
     List<IntDataBean> getUserDetail(String uName,LocalDate dt);
 }

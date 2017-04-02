@@ -155,7 +155,7 @@ public class DBCon implements IntDataBase,IntLogger {
         
     }
 
-    public List<IntDataTuple> getAuth(){
+    public List<String> getAuth(){
         Statement stmt = null;
         try {
             stmt = con.createStatement();
@@ -165,14 +165,14 @@ public class DBCon implements IntDataBase,IntLogger {
             ResultSet rs=null;
         try {
             String d = LocalDate.now().format(DateTimeFormatter.ofPattern(dateformat));
-            rs = stmt.executeQuery("select DISTINCT displayname, version from logtab where logdate=CURDATE() order by displayname asc");
+            rs = stmt.executeQuery("select DISTINCT displayname from logtab where logdate=CURDATE() order by displayname asc");
         } catch (SQLException ex) {
             return new ArrayList<>();
         }
-        List<IntDataTuple> dt = new ArrayList<IntDataTuple>();
+        List<String> dt = new ArrayList<>();
         try {    
             while(rs.next())
-                dt.add(DataBeans.getDataTuple(rs.getString("displayname"),rs.getString("version"),null));
+                dt.add(rs.getString("displayname"));
         } catch (SQLException ex1) {
             return new ArrayList<>();
         }

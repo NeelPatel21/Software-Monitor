@@ -26,11 +26,15 @@ import java.nio.file.Paths;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import ser.UrlTools;
 import static ser.UrlTools.registerObj;
 import static ser.config.Configuration.setDefaultLogDir;
+import ser.database.DBCon;
 import ser.db.IntDataBase;
 import ser.keyGen.KeyGen;
 import ser.logger.IntLogger;
@@ -45,6 +49,7 @@ public class Admin implements IntAdmin{
     private Scanner sc=new Scanner(System.in);
     private final IntDataBase ld;
     private final IntDataBase db;
+    private List<String> auth;
     private IntUI ui;
     private String u="";
     
@@ -138,5 +143,35 @@ public class Admin implements IntAdmin{
     @Override
     public void close()throws IOException{
         System.exit(0);
+    }
+
+    @Override
+    public List<String> getAuthorized() { //To change body of generated methods, choose Tools | Templates.
+        return Collections.unmodifiableList(auth);
+    }
+    
+    private List<String> readAuth(){
+        try {
+            Path p=Paths.get(System.getenv("appdata"),"Software Monitor","auth.txt");
+            return Files.readAllLines(p);
+        } catch(IOException ex) {
+            return null;
+        }
+    }
+    
+    private List<String> getAuth(){
+        if(db!=null)
+            return ((DBCon)db).getAuth();
+        return null;
+    }
+    
+    private boolean writeAuth(List<String> aut){
+        try {
+            Path p=Paths.get(System.getenv("appdata"),"Software Monitor","auth.txt");
+            Files.write(p, aut);
+            return true;
+        } catch(IOException ex) {
+            return false;
+        }
     }
 }
