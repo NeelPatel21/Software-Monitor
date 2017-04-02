@@ -37,10 +37,10 @@ class DataPage extends JFrame {
     boolean flag = true;
     JLabel[] jb = new JLabel[3];
     
-    JLabel[] js = new JLabel[10];
-    JLabel[] jv = new JLabel[10];
-    JLabel jss = new JLabel();
-    JLabel jvv=new JLabel();
+    JLabel[] js = new JLabel[30];
+    JLabel[] jv = new JLabel[30];
+    //JLabel jss = new JLabel();
+    //JLabel jvv=new JLabel();
     JButton jnext = null;
     JButton jprev = null;
     int i= 0;
@@ -50,71 +50,84 @@ class DataPage extends JFrame {
     public DataPage(IntAdmin ia,String uname,LocalDate dt){
         js[0]=new JLabel();
         this.uname = uname;
-        setLayout(new FlowLayout());
-        //setLayout(new GridLayout(11, 3));
-        Toolkit tk = Toolkit.getDefaultToolkit();
-        int xSize = ((int) tk.getScreenSize().getWidth());
-        int ySize = ((int) tk.getScreenSize().getHeight());
-        setSize(xSize,ySize);
+        //setLayout(new ());
+        setLayout(new GridLayout(35, 1));
+        //Toolkit tk = Toolkit.getDefaultToolkit();
+        //int xSize = ((int) tk.getScreenSize().getWidth());
+        //int ySize = ((int) tk.getScreenSize().getHeight());
+        setSize(1000,1000);
+        setMaximumSize(new Dimension(1000,1000));
+        setMinimumSize(new Dimension(1000,1000));
         setVisible(true);
         
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
      
         abc= ia.getUserDetail(uname, dt);
         idt = abc.get(0).getSoftDetail();
+       
         
     }
     public void paint(Graphics g)
     {
         //g.drawString("PArth",50, 50);
-     if(flag)
-     {
+         
          //System.out.println(abc.size());
-         if(abc.size() == 0)
-             jb[0] =  new JLabel("None");
-         else{
-         flag = false;
          jb[0] = new JLabel("Username: "+abc.get(0).getName());
          
-         jb[1] = new JLabel("Mac: "+abc.get(0).getMac());
-         jb[2] = new JLabel("IP: "+abc.get(0).getIP());
+         jb[1]= new JLabel("Mac: "+abc.get(0).getMac());
+         jb[2]= new JLabel("IP: "+abc.get(0).getIP());
          
-         add(jb[0]);
+        // add(jb[0]);
          add(jb[1]);
          add(jb[2]);
+       
+             for(int l=0;l<30;l++){
+         js[l]=new JLabel();
+         jv[l]=new JLabel();
+         add(js[l]);
+         add(jv[l]);
          }
-         
-     }else
-     {
-         jss = new JLabel("Software - name: ");
-         jvv = new JLabel("Version number: ");
-         jss.setPreferredSize(new Dimension(50,50));
-         jvv.setPreferredSize(new Dimension(50,50));
+        
+        
+        
+         JLabel jss = new JLabel("Software - name: ");
+         JLabel jvv = new JLabel("Version number: ");
+        JLabel jvv1 = new JLabel("   ");
+         //jss.setPreferredSize(new Dimension(50,50));
+         //jvv.setPreferredSize(new Dimension(50,50));
 
          add(jss);
          add(jvv);
-         for(int j=0;j<10;j++)
+        // add(jvv1);
+         for(int j=0;j<30;j++)
          {
              //System.out.println(j); 
-             js[j] = new JLabel(idt.get(i).getSoftName());
+             //js[j] = new JLabel();
+            js[j].setText(idt.get(i).getSoftName());
              System.out.println(idt.get(i).getSoftName());
-             jv[j] = new JLabel(idt.get(i).getVersion());
+             jv[j].setText(idt.get(i).getVersion());
              add(js[j]);
              add(jv[j]);
              i++;
          }
-     }
+     
      jnext = new JButton("next");
      jprev = new JButton("prev");
-     add(jnext);
-     add(jprev);
+     //add(jnext);
+     //add(jprev);/*
      jnext.addActionListener(new ActionListener()
      {
 
          @Override
          public void actionPerformed(ActionEvent e) {
-               if(i<=js.length)
-                    repaint();
+                    //DataPage.this.repaint();
+                    //getContentPane().repaint();
+                     //getContentPane().repaint();
+                     //thisrepaint();
+       //              DataPage.this.removeAll(); 
+               //      DataPage.this.repaint();
+                      
+                      
          }
     });
      jprev.addActionListener(new ActionListener()
@@ -123,11 +136,14 @@ class DataPage extends JFrame {
          @Override
          public void actionPerformed(ActionEvent e) {
              
-             if(i>10){
-                i-=10;
-             repaint(); }
+             //DataPage.this.repaint(); 
+              //getContentPane().repaint();
+         //     DataPage.this.removeAll();
+             //repaint();
+              //getContentPane().return 
+               //getContentPane().repaint();
          }
-    });
+    });*/
      
         
     }
