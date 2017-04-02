@@ -54,7 +54,7 @@ class DataPage extends JFrame {
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);		
 	jl = new JLabel[6];
         empty = new JLabel[6];
-        List<IntDataBean> abc = ia.getUserDetail(uname, dt);
+        List<IntDataBean> abc = ia.getUserDetail("Neel Patel", dt);
         jl[0]=new JLabel("Username : "+uname);
         jl[0].setVerticalAlignment(SwingConstants.CENTER);
         jl[1]=new JLabel("IP Address : "+(abc.size()>0?(abc.get(0).getIP()):""));
@@ -101,9 +101,9 @@ class DataPage extends JFrame {
                 ver[i]=new JLabel(idt.getVersion());
                 ver[i].setVerticalAlignment(SwingConstants.CENTER);
                 add(ver[i]);
-                idate[i]=new JLabel(idt.getDate().toString());
-                idate[i].setVerticalAlignment(SwingConstants.CENTER);
-                add(idate[i]);
+                //idate[i]=new JLabel(idt.getDate().toString());
+                //idate[i].setVerticalAlignment(SwingConstants.CENTER);
+                //add(idate[i]);
                 i++;
             }
         }

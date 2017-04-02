@@ -75,7 +75,7 @@ public class AdminGUI extends JFrame implements ActionListener{
             jb2[i].addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    ListPage lp=new ListPage(ia,username,date);
+                    //ListPage lp=new ListPage(ia,username,date);
                 }
             });
             i++;

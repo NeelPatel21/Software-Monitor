@@ -141,6 +141,16 @@ public class StartPage extends JFrame implements IntUI{
     public void close() throws IOException {
         
     }
+
+    @Override
+    public void dbStop() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void dbStart() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
  }
     /*
     LocalDate date;
