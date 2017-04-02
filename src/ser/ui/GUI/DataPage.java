@@ -49,18 +49,24 @@ class DataPage extends JFrame {
         int xSize = ((int) tk.getScreenSize().getWidth());
         int ySize = ((int) tk.getScreenSize().getHeight());
         setSize(xSize,ySize);
-        JScrollPane scroll = new JScrollPane(this);
+        JScrollPane scroll = new JScrollPane();
         scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);		
-	jl = new JLabel[3];
+	jl = new JLabel[6];
         empty = new JLabel[6];
         List<IntDataBean> abc = ia.getUserDetail(uname, dt);
         jl[0]=new JLabel("Username : "+uname);
         jl[0].setVerticalAlignment(SwingConstants.CENTER);
-        jl[1]=new JLabel("IP Address : "+abc.get(0).getIP());
+        jl[1]=new JLabel("IP Address : "+(abc.size()>0?(abc.get(0).getIP()):""));
         jl[1].setVerticalAlignment(SwingConstants.CENTER);
-        jl[2]=new JLabel("Mac Address : "+abc.get(0).getMac());
+        jl[2]=new JLabel("Mac Address : "+(abc.size()>0?(abc.get(0).getMac()):""));
         jl[2].setVerticalAlignment(SwingConstants.CENTER);
+        empty[0]=new JLabel();
+        empty[1]=new JLabel();
+        empty[2]=new JLabel();
+        empty[3]=new JLabel();
+        empty[4]=new JLabel();
+        empty[5]=new JLabel();
         add(jl[0]);
         add(empty[0]);
         add(empty[1]);
@@ -73,17 +79,18 @@ class DataPage extends JFrame {
         //Top ends
         jl[3]=new JLabel("Software Name");
         jl[3].setVerticalAlignment(SwingConstants.CENTER);
-        add(jl[3]);
         jl[4]=new JLabel("Version");
         jl[4].setVerticalAlignment(SwingConstants.CENTER);
-        add(jl[4]);
         jl[5]=new JLabel("Installed Date");
         jl[5].setVerticalAlignment(SwingConstants.CENTER);
+        add(jl[3]);
+        add(jl[4]);
         add(jl[5]);
         int i = 0;
-        JLabel[] sname=new JLabel[abc.get(0).getSoftDetail().size()];
-        JLabel[] ver=new JLabel[abc.get(0).getSoftDetail().size()];
-        JLabel[] idate=new JLabel[abc.get(0).getSoftDetail().size()];
+        System.out.println(abc.size());
+        sname=new JLabel[abc.get(0).getSoftDetail().size()];
+        ver=new JLabel[abc.get(0).getSoftDetail().size()];
+        idate=new JLabel[abc.get(0).getSoftDetail().size()];
         setLayout(new GridLayout(abc.get(0).getSoftDetail().size()+5, 3));
         
         for(IntDataBean p:abc){

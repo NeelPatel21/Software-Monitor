@@ -39,7 +39,7 @@ class ListPage extends JFrame {
         //System.out.println("listpage: "+ld+ia);
         //System.out.println(ld);
         //System.out.println(ia);
-        JScrollPane scroll = new JScrollPane(this);
+        JScrollPane scroll = new JScrollPane();
         scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);		
 		

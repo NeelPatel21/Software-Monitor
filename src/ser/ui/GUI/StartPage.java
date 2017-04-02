@@ -67,7 +67,7 @@ public class StartPage extends JFrame implements IntUI{
             public void actionPerformed(ActionEvent e) {
             try {
             date = LocalDate.parse(sdate);
-                System.out.println("date: "+date);
+                //System.out.println("date: "+date);
                 ListPage lp = new ListPage(ia);
             //    System.out.println("before");
                 uname=lp.getUserName(returnDate(),ia);
