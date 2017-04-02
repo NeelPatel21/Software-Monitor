@@ -33,6 +33,7 @@ import ser.ui.IntUI;
 
 public class StartPage extends JFrame implements IntUI{
     JLabel jl;
+    
     JButton[] jb=new JButton[3];
     JTextField jtf;
     LocalDate date;
@@ -41,6 +42,7 @@ public class StartPage extends JFrame implements IntUI{
     String uname=null;
     
     public StartPage(IntAdmin ia) {
+        ia.registerUI(this);
         this.ia=ia;
         
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
